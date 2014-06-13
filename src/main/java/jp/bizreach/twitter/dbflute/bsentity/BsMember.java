@@ -15,44 +15,42 @@ import jp.bizreach.twitter.dbflute.exentity.*;
  * 会員
  * <pre>
  * [primary-key]
- *     MEMNER_ID
+ *     MEMBER_ID
  * 
  * [column]
- *     MEMNER_ID, MEMBER_NAME, MEMBER_ACCOUNT, MEMBER_STATUS_CODE, MEMBER_PASSWORD
+ *     MEMBER_ID, MEMBER_NAME, MEMBER_ACCOUNT, MEMBER_STATUS_CODE
  * 
  * [sequence]
  *     
  * 
  * [identity]
- *     MEMNER_ID
+ *     MEMBER_ID
  * 
  * [version-no]
  *     
  * 
  * [foreign table]
- *     
+ *     member_status, member_security(AsOne)
  * 
  * [referrer table]
- *     member_following, tweet
+ *     member_following, tweet, member_security
  * 
  * [foreign property]
- *     
+ *     memberStatus, memberSecurityAsOne
  * 
  * [referrer property]
  *     memberFollowingByMyMemberIdList, memberFollowingByYourMemberIdList, tweetList
  * 
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
- * Integer memnerId = entity.getMemnerId();
+ * Integer memberId = entity.getMemberId();
  * String memberName = entity.getMemberName();
  * String memberAccount = entity.getMemberAccount();
  * String memberStatusCode = entity.getMemberStatusCode();
- * String memberPassword = entity.getMemberPassword();
- * entity.setMemnerId(memnerId);
+ * entity.setMemberId(memberId);
  * entity.setMemberName(memberName);
  * entity.setMemberAccount(memberAccount);
  * entity.setMemberStatusCode(memberStatusCode);
- * entity.setMemberPassword(memberPassword);
  * = = = = = = = = = =/
  * </pre>
  * @author DBFlute(AutoGenerator)
@@ -71,8 +69,8 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
     // -----------------------------------------------------
     //                                                Column
     //                                                ------
-    /** MEMNER_ID: {PK, ID, NotNull, INT(10)} */
-    protected Integer _memnerId;
+    /** MEMBER_ID: {PK, ID, NotNull, INT(10)} */
+    protected Integer _memberId;
 
     /** MEMBER_NAME: {IX, NotNull, VARCHAR(50)} */
     protected String _memberName;
@@ -80,11 +78,8 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
     /** MEMBER_ACCOUNT: {UQ, NotNull, VARCHAR(20)} */
     protected String _memberAccount;
 
-    /** MEMBER_STATUS_CODE: {NotNull, CHAR(3)} */
+    /** MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status} */
     protected String _memberStatusCode;
-
-    /** MEMBER_PASSWORD: {NotNull, VARCHAR(50)} */
-    protected String _memberPassword;
 
     // -----------------------------------------------------
     //                                              Internal
@@ -132,7 +127,7 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
      * {@inheritDoc}
      */
     public boolean hasPrimaryKeyValue() {
-        if (getMemnerId() == null) { return false; }
+        if (getMemberId() == null) { return false; }
         return true;
     }
 
@@ -161,6 +156,44 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
+    /** member_status by my MEMBER_STATUS_CODE, named 'memberStatus'. */
+    protected MemberStatus _memberStatus;
+
+    /**
+     * member_status by my MEMBER_STATUS_CODE, named 'memberStatus'.
+     * @return The entity of foreign property 'memberStatus'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MemberStatus getMemberStatus() {
+        return _memberStatus;
+    }
+
+    /**
+     * member_status by my MEMBER_STATUS_CODE, named 'memberStatus'.
+     * @param memberStatus The entity of foreign property 'memberStatus'. (NullAllowed)
+     */
+    public void setMemberStatus(MemberStatus memberStatus) {
+        _memberStatus = memberStatus;
+    }
+
+    /** member_security by MEMBER_ID, named 'memberSecurityAsOne'. */
+    protected MemberSecurity _memberSecurityAsOne;
+
+    /**
+     * member_security by MEMBER_ID, named 'memberSecurityAsOne'.
+     * @return the entity of foreign property(referrer-as-one) 'memberSecurityAsOne'. (NullAllowed: when e.g. no data, no setupSelect)
+     */
+    public MemberSecurity getMemberSecurityAsOne() {
+        return _memberSecurityAsOne;
+    }
+
+    /**
+     * member_security by MEMBER_ID, named 'memberSecurityAsOne'.
+     * @param memberSecurityAsOne The entity of foreign property(referrer-as-one) 'memberSecurityAsOne'. (NullAllowed)
+     */
+    public void setMemberSecurityAsOne(MemberSecurity memberSecurityAsOne) {
+        _memberSecurityAsOne = memberSecurityAsOne;
+    }
+
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
@@ -204,11 +237,11 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
         _memberFollowingByYourMemberIdList = memberFollowingByYourMemberIdList;
     }
 
-    /** tweet by MEMNER_ID, named 'tweetList'. */
+    /** tweet by MEMBER_ID, named 'tweetList'. */
     protected List<Tweet> _tweetList;
 
     /**
-     * tweet by MEMNER_ID, named 'tweetList'.
+     * tweet by MEMBER_ID, named 'tweetList'.
      * @return The entity list of referrer property 'tweetList'. (NotNull: even if no loading, returns empty list)
      */
     public List<Tweet> getTweetList() {
@@ -217,7 +250,7 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
     }
 
     /**
-     * tweet by MEMNER_ID, named 'tweetList'.
+     * tweet by MEMBER_ID, named 'tweetList'.
      * @param tweetList The entity list of referrer property 'tweetList'. (NullAllowed)
      */
     public void setTweetList(List<Tweet> tweetList) {
@@ -285,7 +318,7 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
     public boolean equals(Object obj) {
         if (obj == null || !(obj instanceof BsMember)) { return false; }
         BsMember other = (BsMember)obj;
-        if (!xSV(getMemnerId(), other.getMemnerId())) { return false; }
+        if (!xSV(getMemberId(), other.getMemberId())) { return false; }
         return true;
     }
     protected boolean xSV(Object v1, Object v2) {
@@ -299,7 +332,7 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
     public int hashCode() {
         int hs = 17;
         hs = xCH(hs, getTableDbName());
-        hs = xCH(hs, getMemnerId());
+        hs = xCH(hs, getMemberId());
         return hs;
     }
     protected int xCH(int hs, Object vl) {
@@ -328,6 +361,10 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append(toString());
         String li = "\n  ";
+        if (_memberStatus != null)
+        { sb.append(li).append(xbRDS(_memberStatus, "memberStatus")); }
+        if (_memberSecurityAsOne != null)
+        { sb.append(li).append(xbRDS(_memberSecurityAsOne, "memberSecurityAsOne")); }
         if (_memberFollowingByMyMemberIdList != null) { for (Entity et : _memberFollowingByMyMemberIdList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "memberFollowingByMyMemberIdList")); } } }
         if (_memberFollowingByYourMemberIdList != null) { for (Entity et : _memberFollowingByYourMemberIdList)
@@ -354,11 +391,10 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
     protected String buildColumnString() {
         StringBuilder sb = new StringBuilder();
         String dm = ", ";
-        sb.append(dm).append(getMemnerId());
+        sb.append(dm).append(getMemberId());
         sb.append(dm).append(getMemberName());
         sb.append(dm).append(getMemberAccount());
         sb.append(dm).append(getMemberStatusCode());
-        sb.append(dm).append(getMemberPassword());
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length());
         }
@@ -368,6 +404,8 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
     protected String buildRelationString() {
         StringBuilder sb = new StringBuilder();
         String cm = ",";
+        if (_memberStatus != null) { sb.append(cm).append("memberStatus"); }
+        if (_memberSecurityAsOne != null) { sb.append(cm).append("memberSecurityAsOne"); }
         if (_memberFollowingByMyMemberIdList != null && !_memberFollowingByMyMemberIdList.isEmpty())
         { sb.append(cm).append("memberFollowingByMyMemberIdList"); }
         if (_memberFollowingByYourMemberIdList != null && !_memberFollowingByYourMemberIdList.isEmpty())
@@ -396,22 +434,22 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
     //                                                                            Accessor
     //                                                                            ========
     /**
-     * [get] MEMNER_ID: {PK, ID, NotNull, INT(10)} <br />
+     * [get] MEMBER_ID: {PK, ID, NotNull, INT(10)} <br />
      * 会員ID
-     * @return The value of the column 'MEMNER_ID'. (basically NotNull if selected: for the constraint)
+     * @return The value of the column 'MEMBER_ID'. (basically NotNull if selected: for the constraint)
      */
-    public Integer getMemnerId() {
-        return _memnerId;
+    public Integer getMemberId() {
+        return _memberId;
     }
 
     /**
-     * [set] MEMNER_ID: {PK, ID, NotNull, INT(10)} <br />
+     * [set] MEMBER_ID: {PK, ID, NotNull, INT(10)} <br />
      * 会員ID
-     * @param memnerId The value of the column 'MEMNER_ID'. (basically NotNull if update: for the constraint)
+     * @param memberId The value of the column 'MEMBER_ID'. (basically NotNull if update: for the constraint)
      */
-    public void setMemnerId(Integer memnerId) {
-        __modifiedProperties.addPropertyName("memnerId");
-        this._memnerId = memnerId;
+    public void setMemberId(Integer memberId) {
+        __modifiedProperties.addPropertyName("memberId");
+        this._memberId = memberId;
     }
 
     /**
@@ -453,7 +491,7 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
     }
 
     /**
-     * [get] MEMBER_STATUS_CODE: {NotNull, CHAR(3)} <br />
+     * [get] MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status} <br />
      * 会員ステータスコード
      * @return The value of the column 'MEMBER_STATUS_CODE'. (basically NotNull if selected: for the constraint)
      */
@@ -462,32 +500,13 @@ public abstract class BsMember implements Entity, Serializable, Cloneable {
     }
 
     /**
-     * [set] MEMBER_STATUS_CODE: {NotNull, CHAR(3)} <br />
+     * [set] MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status} <br />
      * 会員ステータスコード
      * @param memberStatusCode The value of the column 'MEMBER_STATUS_CODE'. (basically NotNull if update: for the constraint)
      */
     public void setMemberStatusCode(String memberStatusCode) {
         __modifiedProperties.addPropertyName("memberStatusCode");
         this._memberStatusCode = memberStatusCode;
-    }
-
-    /**
-     * [get] MEMBER_PASSWORD: {NotNull, VARCHAR(50)} <br />
-     * 会員パスワード
-     * @return The value of the column 'MEMBER_PASSWORD'. (basically NotNull if selected: for the constraint)
-     */
-    public String getMemberPassword() {
-        return convertEmptyToNull(_memberPassword);
-    }
-
-    /**
-     * [set] MEMBER_PASSWORD: {NotNull, VARCHAR(50)} <br />
-     * 会員パスワード
-     * @param memberPassword The value of the column 'MEMBER_PASSWORD'. (basically NotNull if update: for the constraint)
-     */
-    public void setMemberPassword(String memberPassword) {
-        __modifiedProperties.addPropertyName("memberPassword");
-        this._memberPassword = memberPassword;
     }
 
     protected String convertEmptyToNull(String value) {

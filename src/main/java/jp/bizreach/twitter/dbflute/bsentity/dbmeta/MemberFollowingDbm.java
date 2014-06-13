@@ -155,7 +155,7 @@ public class MemberFollowingDbm extends AbstractDBMeta {
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMemberByMyMemberId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMyMemberId(), MemberDbm.getInstance().columnMemnerId());
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMyMemberId(), MemberDbm.getInstance().columnMemberId());
         return cfi("member_following_ibfk_1", "memberByMyMemberId", this, MemberDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "memberFollowingByMyMemberIdList");
     }
     /**
@@ -163,7 +163,7 @@ public class MemberFollowingDbm extends AbstractDBMeta {
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMemberByYourMemberId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnYourMemberId(), MemberDbm.getInstance().columnMemnerId());
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnYourMemberId(), MemberDbm.getInstance().columnMemberId());
         return cfi("member_following_ibfk_2", "memberByYourMemberId", this, MemberDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "memberFollowingByYourMemberIdList");
     }
 

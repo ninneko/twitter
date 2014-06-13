@@ -61,53 +61,64 @@ public class MemberCIQ extends AbstractBsMemberCQ {
     // ===================================================================================
     //                                                                Override about Query
     //                                                                ====================
-    protected ConditionValue getCValueMemnerId() { return _myCQ.getMemnerId(); }
-    public String keepMemnerId_ExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
+    protected ConditionValue getCValueMemberId() { return _myCQ.getMemberId(); }
+    public String keepMemberId_ExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    public String keepMemnerId_ExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
+    public String keepMemberId_ExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    public String keepMemnerId_ExistsReferrer_TweetList(TweetCQ sq)
+    public String keepMemberId_ExistsReferrer_MemberSecurityAsOne(MemberSecurityCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    public String keepMemnerId_NotExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
+    public String keepMemberId_ExistsReferrer_TweetList(TweetCQ sq)
+    { throwIICBOE("ExistsReferrer"); return null; }
+    public String keepMemberId_NotExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    public String keepMemnerId_NotExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
+    public String keepMemberId_NotExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    public String keepMemnerId_NotExistsReferrer_TweetList(TweetCQ sq)
+    public String keepMemberId_NotExistsReferrer_MemberSecurityAsOne(MemberSecurityCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    public String keepMemnerId_InScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
-    { return _myCQ.keepMemnerId_InScopeRelation_MemberFollowingByMyMemberIdList(sq); }
-    public String keepMemnerId_InScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
-    { return _myCQ.keepMemnerId_InScopeRelation_MemberFollowingByYourMemberIdList(sq); }
-    public String keepMemnerId_InScopeRelation_TweetList(TweetCQ sq)
-    { return _myCQ.keepMemnerId_InScopeRelation_TweetList(sq); }
-    public String keepMemnerId_NotInScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
-    { return _myCQ.keepMemnerId_NotInScopeRelation_MemberFollowingByMyMemberIdList(sq); }
-    public String keepMemnerId_NotInScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
-    { return _myCQ.keepMemnerId_NotInScopeRelation_MemberFollowingByYourMemberIdList(sq); }
-    public String keepMemnerId_NotInScopeRelation_TweetList(TweetCQ sq)
-    { return _myCQ.keepMemnerId_NotInScopeRelation_TweetList(sq); }
-    public String keepMemnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
+    public String keepMemberId_NotExistsReferrer_TweetList(TweetCQ sq)
+    { throwIICBOE("NotExistsReferrer"); return null; }
+    public String keepMemberId_InScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
+    { return _myCQ.keepMemberId_InScopeRelation_MemberFollowingByMyMemberIdList(sq); }
+    public String keepMemberId_InScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
+    { return _myCQ.keepMemberId_InScopeRelation_MemberFollowingByYourMemberIdList(sq); }
+    public String keepMemberId_InScopeRelation_MemberSecurityAsOne(MemberSecurityCQ sq)
+    { return _myCQ.keepMemberId_InScopeRelation_MemberSecurityAsOne(sq); }
+    public String keepMemberId_InScopeRelation_TweetList(TweetCQ sq)
+    { return _myCQ.keepMemberId_InScopeRelation_TweetList(sq); }
+    public String keepMemberId_NotInScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
+    { return _myCQ.keepMemberId_NotInScopeRelation_MemberFollowingByMyMemberIdList(sq); }
+    public String keepMemberId_NotInScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
+    { return _myCQ.keepMemberId_NotInScopeRelation_MemberFollowingByYourMemberIdList(sq); }
+    public String keepMemberId_NotInScopeRelation_MemberSecurityAsOne(MemberSecurityCQ sq)
+    { return _myCQ.keepMemberId_NotInScopeRelation_MemberSecurityAsOne(sq); }
+    public String keepMemberId_NotInScopeRelation_TweetList(TweetCQ sq)
+    { return _myCQ.keepMemberId_NotInScopeRelation_TweetList(sq); }
+    public String keepMemberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    public String keepMemnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
+    public String keepMemberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    public String keepMemnerId_SpecifyDerivedReferrer_TweetList(TweetCQ sq)
+    public String keepMemberId_SpecifyDerivedReferrer_TweetList(TweetCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    public String keepMemnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
+    public String keepMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepMemnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter(Object vl)
+    public String keepMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepMemnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
+    public String keepMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepMemnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter(Object vl)
+    public String keepMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepMemnerId_QueryDerivedReferrer_TweetList(TweetCQ sq)
+    public String keepMemberId_QueryDerivedReferrer_TweetList(TweetCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepMemnerId_QueryDerivedReferrer_TweetListParameter(Object vl)
+    public String keepMemberId_QueryDerivedReferrer_TweetListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     protected ConditionValue getCValueMemberName() { return _myCQ.getMemberName(); }
     protected ConditionValue getCValueMemberAccount() { return _myCQ.getMemberAccount(); }
     protected ConditionValue getCValueMemberStatusCode() { return _myCQ.getMemberStatusCode(); }
-    protected ConditionValue getCValueMemberPassword() { return _myCQ.getMemberPassword(); }
+    public String keepMemberStatusCode_InScopeRelation_MemberStatus(MemberStatusCQ sq)
+    { return _myCQ.keepMemberStatusCode_InScopeRelation_MemberStatus(sq); }
+    public String keepMemberStatusCode_NotInScopeRelation_MemberStatus(MemberStatusCQ sq)
+    { return _myCQ.keepMemberStatusCode_NotInScopeRelation_MemberStatus(sq); }
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }
     public String keepScalarCondition(MemberCQ sq)
     { throwIICBOE("ScalarCondition"); return null; }

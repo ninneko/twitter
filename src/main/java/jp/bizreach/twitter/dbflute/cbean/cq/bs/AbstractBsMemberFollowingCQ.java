@@ -273,7 +273,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
         MemberCB cb = new MemberCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
         String pp = keepMyMemberId_InScopeRelation_MemberByMyMemberId(cb.query());
-        registerInScopeRelation(cb.query(), "MY_MEMBER_ID", "MEMNER_ID", pp, "memberByMyMemberId");
+        registerInScopeRelation(cb.query(), "MY_MEMBER_ID", "MEMBER_ID", pp, "memberByMyMemberId");
     }
     public abstract String keepMyMemberId_InScopeRelation_MemberByMyMemberId(MemberCQ sq);
 
@@ -288,7 +288,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
         MemberCB cb = new MemberCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
         String pp = keepMyMemberId_NotInScopeRelation_MemberByMyMemberId(cb.query());
-        registerNotInScopeRelation(cb.query(), "MY_MEMBER_ID", "MEMNER_ID", pp, "memberByMyMemberId");
+        registerNotInScopeRelation(cb.query(), "MY_MEMBER_ID", "MEMBER_ID", pp, "memberByMyMemberId");
     }
     public abstract String keepMyMemberId_NotInScopeRelation_MemberByMyMemberId(MemberCQ sq);
 
@@ -407,7 +407,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
         MemberCB cb = new MemberCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
         String pp = keepYourMemberId_InScopeRelation_MemberByYourMemberId(cb.query());
-        registerInScopeRelation(cb.query(), "YOUR_MEMBER_ID", "MEMNER_ID", pp, "memberByYourMemberId");
+        registerInScopeRelation(cb.query(), "YOUR_MEMBER_ID", "MEMBER_ID", pp, "memberByYourMemberId");
     }
     public abstract String keepYourMemberId_InScopeRelation_MemberByYourMemberId(MemberCQ sq);
 
@@ -422,7 +422,7 @@ public abstract class AbstractBsMemberFollowingCQ extends AbstractConditionQuery
         MemberCB cb = new MemberCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
         String pp = keepYourMemberId_NotInScopeRelation_MemberByYourMemberId(cb.query());
-        registerNotInScopeRelation(cb.query(), "YOUR_MEMBER_ID", "MEMNER_ID", pp, "memberByYourMemberId");
+        registerNotInScopeRelation(cb.query(), "YOUR_MEMBER_ID", "MEMBER_ID", pp, "memberByYourMemberId");
     }
     public abstract String keepYourMemberId_NotInScopeRelation_MemberByYourMemberId(MemberCQ sq);
 

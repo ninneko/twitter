@@ -20,6 +20,7 @@ import jp.bizreach.twitter.dbflute.allcommon.ImplementedInvokerAssistant;
 import jp.bizreach.twitter.dbflute.allcommon.ImplementedSqlClauseCreator;
 import jp.bizreach.twitter.dbflute.cbean.*;
 import jp.bizreach.twitter.dbflute.cbean.cq.*;
+import jp.bizreach.twitter.dbflute.cbean.nss.*;
 
 /**
  * The base condition-bean of tweet.
@@ -248,9 +249,14 @@ public class BsTweetCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
+    protected MemberNss _nssMember;
+    public MemberNss getNssMember() {
+        if (_nssMember == null) { _nssMember = new MemberNss(null); }
+        return _nssMember;
+    }
     /**
      * Set up relation columns to select clause. <br />
-     * member by my MEMNER_ID, named 'member'.
+     * member by my MEMBER_ID, named 'member'.
      * <pre>
      * TweetCB cb = new TweetCB();
      * cb.<span style="color: #DD4747">setupSelect_Member()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
@@ -258,13 +264,17 @@ public class BsTweetCB extends AbstractConditionBean {
      * Tweet tweet = tweetBhv.selectEntityWithDeletedCheck(cb);
      * ... = tweet.<span style="color: #DD4747">getMember()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public void setupSelect_Member() {
+    public MemberNss setupSelect_Member() {
         assertSetupSelectPurpose("member");
         if (hasSpecifiedColumn()) { // if reverse call
-            specify().columnMemnerId();
+            specify().columnMemberId();
         }
         doSetupSelect(new SsCall() { public ConditionQuery qf() { return query().queryMember(); } });
+        if (_nssMember == null || !_nssMember.hasConditionQuery())
+        { _nssMember = new MemberNss(query().queryMember()); }
+        return _nssMember;
     }
 
     // [DBFlute-0.7.4]
@@ -319,12 +329,12 @@ public class BsTweetCB extends AbstractConditionBean {
          */
         public HpSpecifiedColumn columnTweetId() { return doColumn("TWEET_ID"); }
         /**
-         * MEMNER_ID: {IX, INT(10), FK to member}
+         * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
          * @return The information object of specified column. (NotNull)
          */
-        public HpSpecifiedColumn columnMemnerId() { return doColumn("MEMNER_ID"); }
+        public HpSpecifiedColumn columnMemberId() { return doColumn("MEMBER_ID"); }
         /**
-         * TWEET_MESSAGE: {VARCHAR(140)}
+         * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
          * @return The information object of specified column. (NotNull)
          */
         public HpSpecifiedColumn columnTweetMessage() { return doColumn("TWEET_MESSAGE"); }
@@ -340,14 +350,14 @@ public class BsTweetCB extends AbstractConditionBean {
             columnTweetId(); // PK
             if (qyCall().qy().hasConditionQueryMember()
                     || qyCall().qy().xgetReferrerQuery() instanceof MemberCQ) {
-                columnMemnerId(); // FK or one-to-one referrer
+                columnMemberId(); // FK or one-to-one referrer
             }
         }
         @Override
         protected String getTableDbName() { return "tweet"; }
         /**
          * Prepare to specify functions about relation table. <br />
-         * member by my MEMNER_ID, named 'member'.
+         * member by my MEMBER_ID, named 'member'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
         public MemberCB.HpSpecification specifyMember() {

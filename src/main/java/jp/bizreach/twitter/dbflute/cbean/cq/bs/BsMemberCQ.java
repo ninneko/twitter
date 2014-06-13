@@ -73,191 +73,223 @@ public class BsMemberCQ extends AbstractBsMemberCQ {
     // ===================================================================================
     //                                                                               Query
     //                                                                               =====
-    protected ConditionValue _memnerId;
-    public ConditionValue getMemnerId() {
-        if (_memnerId == null) { _memnerId = nCV(); }
-        return _memnerId;
+    protected ConditionValue _memberId;
+    public ConditionValue getMemberId() {
+        if (_memberId == null) { _memberId = nCV(); }
+        return _memberId;
     }
-    protected ConditionValue getCValueMemnerId() { return getMemnerId(); }
+    protected ConditionValue getCValueMemberId() { return getMemberId(); }
 
-    protected Map<String, MemberFollowingCQ> _memnerId_ExistsReferrer_MemberFollowingByMyMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_ExistsReferrer_MemberFollowingByMyMemberIdList() { return _memnerId_ExistsReferrer_MemberFollowingByMyMemberIdListMap; }
-    public String keepMemnerId_ExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_ExistsReferrer_MemberFollowingByMyMemberIdListMap == null) { _memnerId_ExistsReferrer_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_ExistsReferrer_MemberFollowingByMyMemberIdListMap.size() + 1);
-        _memnerId_ExistsReferrer_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memnerId_ExistsReferrer_MemberFollowingByMyMemberIdList." + ky;
-    }
-
-    protected Map<String, MemberFollowingCQ> _memnerId_ExistsReferrer_MemberFollowingByYourMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_ExistsReferrer_MemberFollowingByYourMemberIdList() { return _memnerId_ExistsReferrer_MemberFollowingByYourMemberIdListMap; }
-    public String keepMemnerId_ExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_ExistsReferrer_MemberFollowingByYourMemberIdListMap == null) { _memnerId_ExistsReferrer_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_ExistsReferrer_MemberFollowingByYourMemberIdListMap.size() + 1);
-        _memnerId_ExistsReferrer_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memnerId_ExistsReferrer_MemberFollowingByYourMemberIdList." + ky;
+    protected Map<String, MemberFollowingCQ> _memberId_ExistsReferrer_MemberFollowingByMyMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_ExistsReferrer_MemberFollowingByMyMemberIdList() { return _memberId_ExistsReferrer_MemberFollowingByMyMemberIdListMap; }
+    public String keepMemberId_ExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_ExistsReferrer_MemberFollowingByMyMemberIdListMap == null) { _memberId_ExistsReferrer_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_ExistsReferrer_MemberFollowingByMyMemberIdListMap.size() + 1);
+        _memberId_ExistsReferrer_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memberId_ExistsReferrer_MemberFollowingByMyMemberIdList." + ky;
     }
 
-    protected Map<String, TweetCQ> _memnerId_ExistsReferrer_TweetListMap;
-    public Map<String, TweetCQ> getMemnerId_ExistsReferrer_TweetList() { return _memnerId_ExistsReferrer_TweetListMap; }
-    public String keepMemnerId_ExistsReferrer_TweetList(TweetCQ sq) {
-        if (_memnerId_ExistsReferrer_TweetListMap == null) { _memnerId_ExistsReferrer_TweetListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_ExistsReferrer_TweetListMap.size() + 1);
-        _memnerId_ExistsReferrer_TweetListMap.put(ky, sq); return "memnerId_ExistsReferrer_TweetList." + ky;
+    protected Map<String, MemberFollowingCQ> _memberId_ExistsReferrer_MemberFollowingByYourMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_ExistsReferrer_MemberFollowingByYourMemberIdList() { return _memberId_ExistsReferrer_MemberFollowingByYourMemberIdListMap; }
+    public String keepMemberId_ExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_ExistsReferrer_MemberFollowingByYourMemberIdListMap == null) { _memberId_ExistsReferrer_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_ExistsReferrer_MemberFollowingByYourMemberIdListMap.size() + 1);
+        _memberId_ExistsReferrer_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memberId_ExistsReferrer_MemberFollowingByYourMemberIdList." + ky;
     }
 
-    protected Map<String, MemberFollowingCQ> _memnerId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_NotExistsReferrer_MemberFollowingByMyMemberIdList() { return _memnerId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap; }
-    public String keepMemnerId_NotExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap == null) { _memnerId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap.size() + 1);
-        _memnerId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memnerId_NotExistsReferrer_MemberFollowingByMyMemberIdList." + ky;
+    protected Map<String, MemberSecurityCQ> _memberId_ExistsReferrer_MemberSecurityAsOneMap;
+    public Map<String, MemberSecurityCQ> getMemberId_ExistsReferrer_MemberSecurityAsOne() { return _memberId_ExistsReferrer_MemberSecurityAsOneMap; }
+    public String keepMemberId_ExistsReferrer_MemberSecurityAsOne(MemberSecurityCQ sq) {
+        if (_memberId_ExistsReferrer_MemberSecurityAsOneMap == null) { _memberId_ExistsReferrer_MemberSecurityAsOneMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_ExistsReferrer_MemberSecurityAsOneMap.size() + 1);
+        _memberId_ExistsReferrer_MemberSecurityAsOneMap.put(ky, sq); return "memberId_ExistsReferrer_MemberSecurityAsOne." + ky;
     }
 
-    protected Map<String, MemberFollowingCQ> _memnerId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_NotExistsReferrer_MemberFollowingByYourMemberIdList() { return _memnerId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap; }
-    public String keepMemnerId_NotExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap == null) { _memnerId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap.size() + 1);
-        _memnerId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memnerId_NotExistsReferrer_MemberFollowingByYourMemberIdList." + ky;
+    protected Map<String, TweetCQ> _memberId_ExistsReferrer_TweetListMap;
+    public Map<String, TweetCQ> getMemberId_ExistsReferrer_TweetList() { return _memberId_ExistsReferrer_TweetListMap; }
+    public String keepMemberId_ExistsReferrer_TweetList(TweetCQ sq) {
+        if (_memberId_ExistsReferrer_TweetListMap == null) { _memberId_ExistsReferrer_TweetListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_ExistsReferrer_TweetListMap.size() + 1);
+        _memberId_ExistsReferrer_TweetListMap.put(ky, sq); return "memberId_ExistsReferrer_TweetList." + ky;
     }
 
-    protected Map<String, TweetCQ> _memnerId_NotExistsReferrer_TweetListMap;
-    public Map<String, TweetCQ> getMemnerId_NotExistsReferrer_TweetList() { return _memnerId_NotExistsReferrer_TweetListMap; }
-    public String keepMemnerId_NotExistsReferrer_TweetList(TweetCQ sq) {
-        if (_memnerId_NotExistsReferrer_TweetListMap == null) { _memnerId_NotExistsReferrer_TweetListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_NotExistsReferrer_TweetListMap.size() + 1);
-        _memnerId_NotExistsReferrer_TweetListMap.put(ky, sq); return "memnerId_NotExistsReferrer_TweetList." + ky;
+    protected Map<String, MemberFollowingCQ> _memberId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_NotExistsReferrer_MemberFollowingByMyMemberIdList() { return _memberId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap; }
+    public String keepMemberId_NotExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap == null) { _memberId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap.size() + 1);
+        _memberId_NotExistsReferrer_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memberId_NotExistsReferrer_MemberFollowingByMyMemberIdList." + ky;
     }
 
-    protected Map<String, MemberFollowingCQ> _memnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList() { return _memnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap; }
-    public String keepMemnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap == null) { _memnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap.size() + 1);
-        _memnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList." + ky;
+    protected Map<String, MemberFollowingCQ> _memberId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_NotExistsReferrer_MemberFollowingByYourMemberIdList() { return _memberId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap; }
+    public String keepMemberId_NotExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap == null) { _memberId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap.size() + 1);
+        _memberId_NotExistsReferrer_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memberId_NotExistsReferrer_MemberFollowingByYourMemberIdList." + ky;
     }
 
-    protected Map<String, MemberFollowingCQ> _memnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList() { return _memnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap; }
-    public String keepMemnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap == null) { _memnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap.size() + 1);
-        _memnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList." + ky;
+    protected Map<String, MemberSecurityCQ> _memberId_NotExistsReferrer_MemberSecurityAsOneMap;
+    public Map<String, MemberSecurityCQ> getMemberId_NotExistsReferrer_MemberSecurityAsOne() { return _memberId_NotExistsReferrer_MemberSecurityAsOneMap; }
+    public String keepMemberId_NotExistsReferrer_MemberSecurityAsOne(MemberSecurityCQ sq) {
+        if (_memberId_NotExistsReferrer_MemberSecurityAsOneMap == null) { _memberId_NotExistsReferrer_MemberSecurityAsOneMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_NotExistsReferrer_MemberSecurityAsOneMap.size() + 1);
+        _memberId_NotExistsReferrer_MemberSecurityAsOneMap.put(ky, sq); return "memberId_NotExistsReferrer_MemberSecurityAsOne." + ky;
     }
 
-    protected Map<String, TweetCQ> _memnerId_SpecifyDerivedReferrer_TweetListMap;
-    public Map<String, TweetCQ> getMemnerId_SpecifyDerivedReferrer_TweetList() { return _memnerId_SpecifyDerivedReferrer_TweetListMap; }
-    public String keepMemnerId_SpecifyDerivedReferrer_TweetList(TweetCQ sq) {
-        if (_memnerId_SpecifyDerivedReferrer_TweetListMap == null) { _memnerId_SpecifyDerivedReferrer_TweetListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_SpecifyDerivedReferrer_TweetListMap.size() + 1);
-        _memnerId_SpecifyDerivedReferrer_TweetListMap.put(ky, sq); return "memnerId_SpecifyDerivedReferrer_TweetList." + ky;
+    protected Map<String, TweetCQ> _memberId_NotExistsReferrer_TweetListMap;
+    public Map<String, TweetCQ> getMemberId_NotExistsReferrer_TweetList() { return _memberId_NotExistsReferrer_TweetListMap; }
+    public String keepMemberId_NotExistsReferrer_TweetList(TweetCQ sq) {
+        if (_memberId_NotExistsReferrer_TweetListMap == null) { _memberId_NotExistsReferrer_TweetListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_NotExistsReferrer_TweetListMap.size() + 1);
+        _memberId_NotExistsReferrer_TweetListMap.put(ky, sq); return "memberId_NotExistsReferrer_TweetList." + ky;
     }
 
-    protected Map<String, MemberFollowingCQ> _memnerId_InScopeRelation_MemberFollowingByMyMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_InScopeRelation_MemberFollowingByMyMemberIdList() { return _memnerId_InScopeRelation_MemberFollowingByMyMemberIdListMap; }
-    public String keepMemnerId_InScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_InScopeRelation_MemberFollowingByMyMemberIdListMap == null) { _memnerId_InScopeRelation_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_InScopeRelation_MemberFollowingByMyMemberIdListMap.size() + 1);
-        _memnerId_InScopeRelation_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memnerId_InScopeRelation_MemberFollowingByMyMemberIdList." + ky;
+    protected Map<String, MemberFollowingCQ> _memberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList() { return _memberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap; }
+    public String keepMemberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap == null) { _memberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap.size() + 1);
+        _memberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList." + ky;
     }
 
-    protected Map<String, MemberFollowingCQ> _memnerId_InScopeRelation_MemberFollowingByYourMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_InScopeRelation_MemberFollowingByYourMemberIdList() { return _memnerId_InScopeRelation_MemberFollowingByYourMemberIdListMap; }
-    public String keepMemnerId_InScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_InScopeRelation_MemberFollowingByYourMemberIdListMap == null) { _memnerId_InScopeRelation_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_InScopeRelation_MemberFollowingByYourMemberIdListMap.size() + 1);
-        _memnerId_InScopeRelation_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memnerId_InScopeRelation_MemberFollowingByYourMemberIdList." + ky;
+    protected Map<String, MemberFollowingCQ> _memberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList() { return _memberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap; }
+    public String keepMemberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap == null) { _memberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap.size() + 1);
+        _memberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList." + ky;
     }
 
-    protected Map<String, TweetCQ> _memnerId_InScopeRelation_TweetListMap;
-    public Map<String, TweetCQ> getMemnerId_InScopeRelation_TweetList() { return _memnerId_InScopeRelation_TweetListMap; }
-    public String keepMemnerId_InScopeRelation_TweetList(TweetCQ sq) {
-        if (_memnerId_InScopeRelation_TweetListMap == null) { _memnerId_InScopeRelation_TweetListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_InScopeRelation_TweetListMap.size() + 1);
-        _memnerId_InScopeRelation_TweetListMap.put(ky, sq); return "memnerId_InScopeRelation_TweetList." + ky;
+    protected Map<String, TweetCQ> _memberId_SpecifyDerivedReferrer_TweetListMap;
+    public Map<String, TweetCQ> getMemberId_SpecifyDerivedReferrer_TweetList() { return _memberId_SpecifyDerivedReferrer_TweetListMap; }
+    public String keepMemberId_SpecifyDerivedReferrer_TweetList(TweetCQ sq) {
+        if (_memberId_SpecifyDerivedReferrer_TweetListMap == null) { _memberId_SpecifyDerivedReferrer_TweetListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_SpecifyDerivedReferrer_TweetListMap.size() + 1);
+        _memberId_SpecifyDerivedReferrer_TweetListMap.put(ky, sq); return "memberId_SpecifyDerivedReferrer_TweetList." + ky;
     }
 
-    protected Map<String, MemberFollowingCQ> _memnerId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_NotInScopeRelation_MemberFollowingByMyMemberIdList() { return _memnerId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap; }
-    public String keepMemnerId_NotInScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap == null) { _memnerId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap.size() + 1);
-        _memnerId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memnerId_NotInScopeRelation_MemberFollowingByMyMemberIdList." + ky;
+    protected Map<String, MemberFollowingCQ> _memberId_InScopeRelation_MemberFollowingByMyMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_InScopeRelation_MemberFollowingByMyMemberIdList() { return _memberId_InScopeRelation_MemberFollowingByMyMemberIdListMap; }
+    public String keepMemberId_InScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_InScopeRelation_MemberFollowingByMyMemberIdListMap == null) { _memberId_InScopeRelation_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_InScopeRelation_MemberFollowingByMyMemberIdListMap.size() + 1);
+        _memberId_InScopeRelation_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memberId_InScopeRelation_MemberFollowingByMyMemberIdList." + ky;
     }
 
-    protected Map<String, MemberFollowingCQ> _memnerId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_NotInScopeRelation_MemberFollowingByYourMemberIdList() { return _memnerId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap; }
-    public String keepMemnerId_NotInScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap == null) { _memnerId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap.size() + 1);
-        _memnerId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memnerId_NotInScopeRelation_MemberFollowingByYourMemberIdList." + ky;
+    protected Map<String, MemberFollowingCQ> _memberId_InScopeRelation_MemberFollowingByYourMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_InScopeRelation_MemberFollowingByYourMemberIdList() { return _memberId_InScopeRelation_MemberFollowingByYourMemberIdListMap; }
+    public String keepMemberId_InScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_InScopeRelation_MemberFollowingByYourMemberIdListMap == null) { _memberId_InScopeRelation_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_InScopeRelation_MemberFollowingByYourMemberIdListMap.size() + 1);
+        _memberId_InScopeRelation_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memberId_InScopeRelation_MemberFollowingByYourMemberIdList." + ky;
     }
 
-    protected Map<String, TweetCQ> _memnerId_NotInScopeRelation_TweetListMap;
-    public Map<String, TweetCQ> getMemnerId_NotInScopeRelation_TweetList() { return _memnerId_NotInScopeRelation_TweetListMap; }
-    public String keepMemnerId_NotInScopeRelation_TweetList(TweetCQ sq) {
-        if (_memnerId_NotInScopeRelation_TweetListMap == null) { _memnerId_NotInScopeRelation_TweetListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_NotInScopeRelation_TweetListMap.size() + 1);
-        _memnerId_NotInScopeRelation_TweetListMap.put(ky, sq); return "memnerId_NotInScopeRelation_TweetList." + ky;
+    protected Map<String, MemberSecurityCQ> _memberId_InScopeRelation_MemberSecurityAsOneMap;
+    public Map<String, MemberSecurityCQ> getMemberId_InScopeRelation_MemberSecurityAsOne() { return _memberId_InScopeRelation_MemberSecurityAsOneMap; }
+    public String keepMemberId_InScopeRelation_MemberSecurityAsOne(MemberSecurityCQ sq) {
+        if (_memberId_InScopeRelation_MemberSecurityAsOneMap == null) { _memberId_InScopeRelation_MemberSecurityAsOneMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_InScopeRelation_MemberSecurityAsOneMap.size() + 1);
+        _memberId_InScopeRelation_MemberSecurityAsOneMap.put(ky, sq); return "memberId_InScopeRelation_MemberSecurityAsOne." + ky;
     }
 
-    protected Map<String, MemberFollowingCQ> _memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList() { return _memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap; }
-    public String keepMemnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap == null) { _memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap.size() + 1);
-        _memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList." + ky;
-    }
-    protected Map<String, Object> _memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap;
-    public Map<String, Object> getMemnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter() { return _memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap; }
-    public String keepMemnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter(Object vl) {
-        if (_memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap == null) { _memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryParameterKey" + (_memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap.size() + 1);
-        _memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap.put(ky, vl); return "memnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter." + ky;
+    protected Map<String, TweetCQ> _memberId_InScopeRelation_TweetListMap;
+    public Map<String, TweetCQ> getMemberId_InScopeRelation_TweetList() { return _memberId_InScopeRelation_TweetListMap; }
+    public String keepMemberId_InScopeRelation_TweetList(TweetCQ sq) {
+        if (_memberId_InScopeRelation_TweetListMap == null) { _memberId_InScopeRelation_TweetListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_InScopeRelation_TweetListMap.size() + 1);
+        _memberId_InScopeRelation_TweetListMap.put(ky, sq); return "memberId_InScopeRelation_TweetList." + ky;
     }
 
-    protected Map<String, MemberFollowingCQ> _memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap;
-    public Map<String, MemberFollowingCQ> getMemnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList() { return _memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap; }
-    public String keepMemnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
-        if (_memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap == null) { _memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap.size() + 1);
-        _memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList." + ky;
-    }
-    protected Map<String, Object> _memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap;
-    public Map<String, Object> getMemnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter() { return _memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap; }
-    public String keepMemnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter(Object vl) {
-        if (_memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap == null) { _memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryParameterKey" + (_memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap.size() + 1);
-        _memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap.put(ky, vl); return "memnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter." + ky;
+    protected Map<String, MemberFollowingCQ> _memberId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_NotInScopeRelation_MemberFollowingByMyMemberIdList() { return _memberId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap; }
+    public String keepMemberId_NotInScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap == null) { _memberId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap.size() + 1);
+        _memberId_NotInScopeRelation_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memberId_NotInScopeRelation_MemberFollowingByMyMemberIdList." + ky;
     }
 
-    protected Map<String, TweetCQ> _memnerId_QueryDerivedReferrer_TweetListMap;
-    public Map<String, TweetCQ> getMemnerId_QueryDerivedReferrer_TweetList() { return _memnerId_QueryDerivedReferrer_TweetListMap; }
-    public String keepMemnerId_QueryDerivedReferrer_TweetList(TweetCQ sq) {
-        if (_memnerId_QueryDerivedReferrer_TweetListMap == null) { _memnerId_QueryDerivedReferrer_TweetListMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_QueryDerivedReferrer_TweetListMap.size() + 1);
-        _memnerId_QueryDerivedReferrer_TweetListMap.put(ky, sq); return "memnerId_QueryDerivedReferrer_TweetList." + ky;
+    protected Map<String, MemberFollowingCQ> _memberId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_NotInScopeRelation_MemberFollowingByYourMemberIdList() { return _memberId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap; }
+    public String keepMemberId_NotInScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap == null) { _memberId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap.size() + 1);
+        _memberId_NotInScopeRelation_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memberId_NotInScopeRelation_MemberFollowingByYourMemberIdList." + ky;
     }
-    protected Map<String, Object> _memnerId_QueryDerivedReferrer_TweetListParameterMap;
-    public Map<String, Object> getMemnerId_QueryDerivedReferrer_TweetListParameter() { return _memnerId_QueryDerivedReferrer_TweetListParameterMap; }
-    public String keepMemnerId_QueryDerivedReferrer_TweetListParameter(Object vl) {
-        if (_memnerId_QueryDerivedReferrer_TweetListParameterMap == null) { _memnerId_QueryDerivedReferrer_TweetListParameterMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryParameterKey" + (_memnerId_QueryDerivedReferrer_TweetListParameterMap.size() + 1);
-        _memnerId_QueryDerivedReferrer_TweetListParameterMap.put(ky, vl); return "memnerId_QueryDerivedReferrer_TweetListParameter." + ky;
+
+    protected Map<String, MemberSecurityCQ> _memberId_NotInScopeRelation_MemberSecurityAsOneMap;
+    public Map<String, MemberSecurityCQ> getMemberId_NotInScopeRelation_MemberSecurityAsOne() { return _memberId_NotInScopeRelation_MemberSecurityAsOneMap; }
+    public String keepMemberId_NotInScopeRelation_MemberSecurityAsOne(MemberSecurityCQ sq) {
+        if (_memberId_NotInScopeRelation_MemberSecurityAsOneMap == null) { _memberId_NotInScopeRelation_MemberSecurityAsOneMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_NotInScopeRelation_MemberSecurityAsOneMap.size() + 1);
+        _memberId_NotInScopeRelation_MemberSecurityAsOneMap.put(ky, sq); return "memberId_NotInScopeRelation_MemberSecurityAsOne." + ky;
+    }
+
+    protected Map<String, TweetCQ> _memberId_NotInScopeRelation_TweetListMap;
+    public Map<String, TweetCQ> getMemberId_NotInScopeRelation_TweetList() { return _memberId_NotInScopeRelation_TweetListMap; }
+    public String keepMemberId_NotInScopeRelation_TweetList(TweetCQ sq) {
+        if (_memberId_NotInScopeRelation_TweetListMap == null) { _memberId_NotInScopeRelation_TweetListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_NotInScopeRelation_TweetListMap.size() + 1);
+        _memberId_NotInScopeRelation_TweetListMap.put(ky, sq); return "memberId_NotInScopeRelation_TweetList." + ky;
+    }
+
+    protected Map<String, MemberFollowingCQ> _memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList() { return _memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap; }
+    public String keepMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap == null) { _memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap.size() + 1);
+        _memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListMap.put(ky, sq); return "memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList." + ky;
+    }
+    protected Map<String, Object> _memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap;
+    public Map<String, Object> getMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter() { return _memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap; }
+    public String keepMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter(Object vl) {
+        if (_memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap == null) { _memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryParameterKey" + (_memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap.size() + 1);
+        _memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameterMap.put(ky, vl); return "memberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter." + ky;
+    }
+
+    protected Map<String, MemberFollowingCQ> _memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap;
+    public Map<String, MemberFollowingCQ> getMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList() { return _memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap; }
+    public String keepMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq) {
+        if (_memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap == null) { _memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap.size() + 1);
+        _memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListMap.put(ky, sq); return "memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList." + ky;
+    }
+    protected Map<String, Object> _memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap;
+    public Map<String, Object> getMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter() { return _memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap; }
+    public String keepMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter(Object vl) {
+        if (_memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap == null) { _memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryParameterKey" + (_memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap.size() + 1);
+        _memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameterMap.put(ky, vl); return "memberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter." + ky;
+    }
+
+    protected Map<String, TweetCQ> _memberId_QueryDerivedReferrer_TweetListMap;
+    public Map<String, TweetCQ> getMemberId_QueryDerivedReferrer_TweetList() { return _memberId_QueryDerivedReferrer_TweetListMap; }
+    public String keepMemberId_QueryDerivedReferrer_TweetList(TweetCQ sq) {
+        if (_memberId_QueryDerivedReferrer_TweetListMap == null) { _memberId_QueryDerivedReferrer_TweetListMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_QueryDerivedReferrer_TweetListMap.size() + 1);
+        _memberId_QueryDerivedReferrer_TweetListMap.put(ky, sq); return "memberId_QueryDerivedReferrer_TweetList." + ky;
+    }
+    protected Map<String, Object> _memberId_QueryDerivedReferrer_TweetListParameterMap;
+    public Map<String, Object> getMemberId_QueryDerivedReferrer_TweetListParameter() { return _memberId_QueryDerivedReferrer_TweetListParameterMap; }
+    public String keepMemberId_QueryDerivedReferrer_TweetListParameter(Object vl) {
+        if (_memberId_QueryDerivedReferrer_TweetListParameterMap == null) { _memberId_QueryDerivedReferrer_TweetListParameterMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryParameterKey" + (_memberId_QueryDerivedReferrer_TweetListParameterMap.size() + 1);
+        _memberId_QueryDerivedReferrer_TweetListParameterMap.put(ky, vl); return "memberId_QueryDerivedReferrer_TweetListParameter." + ky;
     }
 
     /** 
      * Add order-by as ascend. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
      * @return this. (NotNull)
      */
-    public BsMemberCQ addOrderBy_MemnerId_Asc() { regOBA("MEMNER_ID"); return this; }
+    public BsMemberCQ addOrderBy_MemberId_Asc() { regOBA("MEMBER_ID"); return this; }
 
     /**
      * Add order-by as descend. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
      * @return this. (NotNull)
      */
-    public BsMemberCQ addOrderBy_MemnerId_Desc() { regOBD("MEMNER_ID"); return this; }
+    public BsMemberCQ addOrderBy_MemberId_Desc() { regOBD("MEMBER_ID"); return this; }
 
     protected ConditionValue _memberName;
     public ConditionValue getMemberName() {
@@ -308,40 +340,35 @@ public class BsMemberCQ extends AbstractBsMemberCQ {
     }
     protected ConditionValue getCValueMemberStatusCode() { return getMemberStatusCode(); }
 
+    protected Map<String, MemberStatusCQ> _memberStatusCode_InScopeRelation_MemberStatusMap;
+    public Map<String, MemberStatusCQ> getMemberStatusCode_InScopeRelation_MemberStatus() { return _memberStatusCode_InScopeRelation_MemberStatusMap; }
+    public String keepMemberStatusCode_InScopeRelation_MemberStatus(MemberStatusCQ sq) {
+        if (_memberStatusCode_InScopeRelation_MemberStatusMap == null) { _memberStatusCode_InScopeRelation_MemberStatusMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberStatusCode_InScopeRelation_MemberStatusMap.size() + 1);
+        _memberStatusCode_InScopeRelation_MemberStatusMap.put(ky, sq); return "memberStatusCode_InScopeRelation_MemberStatus." + ky;
+    }
+
+    protected Map<String, MemberStatusCQ> _memberStatusCode_NotInScopeRelation_MemberStatusMap;
+    public Map<String, MemberStatusCQ> getMemberStatusCode_NotInScopeRelation_MemberStatus() { return _memberStatusCode_NotInScopeRelation_MemberStatusMap; }
+    public String keepMemberStatusCode_NotInScopeRelation_MemberStatus(MemberStatusCQ sq) {
+        if (_memberStatusCode_NotInScopeRelation_MemberStatusMap == null) { _memberStatusCode_NotInScopeRelation_MemberStatusMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberStatusCode_NotInScopeRelation_MemberStatusMap.size() + 1);
+        _memberStatusCode_NotInScopeRelation_MemberStatusMap.put(ky, sq); return "memberStatusCode_NotInScopeRelation_MemberStatus." + ky;
+    }
+
     /** 
      * Add order-by as ascend. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @return this. (NotNull)
      */
     public BsMemberCQ addOrderBy_MemberStatusCode_Asc() { regOBA("MEMBER_STATUS_CODE"); return this; }
 
     /**
      * Add order-by as descend. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @return this. (NotNull)
      */
     public BsMemberCQ addOrderBy_MemberStatusCode_Desc() { regOBD("MEMBER_STATUS_CODE"); return this; }
-
-    protected ConditionValue _memberPassword;
-    public ConditionValue getMemberPassword() {
-        if (_memberPassword == null) { _memberPassword = nCV(); }
-        return _memberPassword;
-    }
-    protected ConditionValue getCValueMemberPassword() { return getMemberPassword(); }
-
-    /** 
-     * Add order-by as ascend. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @return this. (NotNull)
-     */
-    public BsMemberCQ addOrderBy_MemberPassword_Asc() { regOBA("MEMBER_PASSWORD"); return this; }
-
-    /**
-     * Add order-by as descend. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @return this. (NotNull)
-     */
-    public BsMemberCQ addOrderBy_MemberPassword_Desc() { regOBD("MEMBER_PASSWORD"); return this; }
 
     // ===================================================================================
     //                                                             SpecifiedDerivedOrderBy
@@ -384,11 +411,87 @@ public class BsMemberCQ extends AbstractBsMemberCQ {
     //                                                                         Union Query
     //                                                                         ===========
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
+        MemberCQ bq = (MemberCQ)bqs;
+        MemberCQ uq = (MemberCQ)uqs;
+        if (bq.hasConditionQueryMemberStatus()) {
+            uq.queryMemberStatus().reflectRelationOnUnionQuery(bq.queryMemberStatus(), uq.queryMemberStatus());
+        }
+        if (bq.hasConditionQueryMemberSecurityAsOne()) {
+            uq.queryMemberSecurityAsOne().reflectRelationOnUnionQuery(bq.queryMemberSecurityAsOne(), uq.queryMemberSecurityAsOne());
+        }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
+    /**
+     * Get the condition-query for relation table. <br />
+     * member_status by my MEMBER_STATUS_CODE, named 'memberStatus'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MemberStatusCQ queryMemberStatus() {
+        return getConditionQueryMemberStatus();
+    }
+    protected MemberStatusCQ _conditionQueryMemberStatus;
+    public MemberStatusCQ getConditionQueryMemberStatus() {
+        if (_conditionQueryMemberStatus == null) {
+            _conditionQueryMemberStatus = xcreateQueryMemberStatus();
+            xsetupOuterJoinMemberStatus();
+        }
+        return _conditionQueryMemberStatus;
+    }
+    protected MemberStatusCQ xcreateQueryMemberStatus() {
+        String nrp = resolveNextRelationPath("member", "memberStatus");
+        String jan = resolveJoinAliasName(nrp, xgetNextNestLevel());
+        MemberStatusCQ cq = new MemberStatusCQ(this, xgetSqlClause(), jan, xgetNextNestLevel());
+        cq.xsetBaseCB(_baseCB);
+        cq.xsetForeignPropertyName("memberStatus");
+        cq.xsetRelationPath(nrp); return cq;
+    }
+    protected void xsetupOuterJoinMemberStatus() {
+        MemberStatusCQ cq = getConditionQueryMemberStatus();
+        Map<String, String> joinOnMap = newLinkedHashMapSized(4);
+        joinOnMap.put("MEMBER_STATUS_CODE", "MEMBER_STATUS_CODE");
+        registerOuterJoin(cq, joinOnMap, "memberStatus");
+    }
+    public boolean hasConditionQueryMemberStatus() {
+        return _conditionQueryMemberStatus != null;
+    }
+
+    /**
+     * Get the condition-query for relation table. <br />
+     * member_security by MEMBER_ID, named 'memberSecurityAsOne'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MemberSecurityCQ queryMemberSecurityAsOne() {
+        return getConditionQueryMemberSecurityAsOne();
+    }
+    protected MemberSecurityCQ _conditionQueryMemberSecurityAsOne;
+    public MemberSecurityCQ getConditionQueryMemberSecurityAsOne() {
+        if (_conditionQueryMemberSecurityAsOne == null) {
+            _conditionQueryMemberSecurityAsOne = xcreateQueryMemberSecurityAsOne();
+            xsetupOuterJoinMemberSecurityAsOne();
+        }
+        return _conditionQueryMemberSecurityAsOne;
+    }
+    protected MemberSecurityCQ xcreateQueryMemberSecurityAsOne() {
+        String nrp = resolveNextRelationPath("member", "memberSecurityAsOne");
+        String jan = resolveJoinAliasName(nrp, xgetNextNestLevel());
+        MemberSecurityCQ cq = new MemberSecurityCQ(this, xgetSqlClause(), jan, xgetNextNestLevel());
+        cq.xsetBaseCB(_baseCB);
+        cq.xsetForeignPropertyName("memberSecurityAsOne");
+        cq.xsetRelationPath(nrp); return cq;
+    }
+    protected void xsetupOuterJoinMemberSecurityAsOne() {
+        MemberSecurityCQ cq = getConditionQueryMemberSecurityAsOne();
+        Map<String, String> joinOnMap = newLinkedHashMapSized(4);
+        joinOnMap.put("MEMBER_ID", "MEMBER_ID");
+        registerOuterJoin(cq, joinOnMap, "memberSecurityAsOne");
+    }
+    public boolean hasConditionQueryMemberSecurityAsOne() {
+        return _conditionQueryMemberSecurityAsOne != null;
+    }
+
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;
     }

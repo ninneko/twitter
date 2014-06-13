@@ -47,103 +47,103 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
     
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
-     * @param memnerId The value of memnerId as equal. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
+     * @param memberId The value of memberId as equal. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_Equal(Integer memnerId) {
-        doSetMemnerId_Equal(memnerId);
+    public void setMemberId_Equal(Integer memberId) {
+        doSetMemberId_Equal(memberId);
     }
 
-    protected void doSetMemnerId_Equal(Integer memnerId) {
-        regMemnerId(CK_EQ, memnerId);
+    protected void doSetMemberId_Equal(Integer memberId) {
+        regMemberId(CK_EQ, memberId);
     }
 
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
-     * @param memnerId The value of memnerId as notEqual. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
+     * @param memberId The value of memberId as notEqual. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_NotEqual(Integer memnerId) {
-        doSetMemnerId_NotEqual(memnerId);
+    public void setMemberId_NotEqual(Integer memberId) {
+        doSetMemberId_NotEqual(memberId);
     }
 
-    protected void doSetMemnerId_NotEqual(Integer memnerId) {
-        regMemnerId(CK_NES, memnerId);
+    protected void doSetMemberId_NotEqual(Integer memberId) {
+        regMemberId(CK_NES, memberId);
     }
 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
-     * @param memnerId The value of memnerId as greaterThan. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
+     * @param memberId The value of memberId as greaterThan. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_GreaterThan(Integer memnerId) {
-        regMemnerId(CK_GT, memnerId);
+    public void setMemberId_GreaterThan(Integer memberId) {
+        regMemberId(CK_GT, memberId);
     }
 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
-     * @param memnerId The value of memnerId as lessThan. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
+     * @param memberId The value of memberId as lessThan. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_LessThan(Integer memnerId) {
-        regMemnerId(CK_LT, memnerId);
+    public void setMemberId_LessThan(Integer memberId) {
+        regMemberId(CK_LT, memberId);
     }
 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
-     * @param memnerId The value of memnerId as greaterEqual. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
+     * @param memberId The value of memberId as greaterEqual. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_GreaterEqual(Integer memnerId) {
-        regMemnerId(CK_GE, memnerId);
+    public void setMemberId_GreaterEqual(Integer memberId) {
+        regMemberId(CK_GE, memberId);
     }
 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
-     * @param memnerId The value of memnerId as lessEqual. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
+     * @param memberId The value of memberId as lessEqual. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_LessEqual(Integer memnerId) {
-        regMemnerId(CK_LE, memnerId);
+    public void setMemberId_LessEqual(Integer memberId) {
+        regMemberId(CK_LE, memberId);
     }
 
     /**
      * RangeOf with various options. (versatile) <br />
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br />
      * And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
-     * @param minNumber The min number of memnerId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of memnerId. (NullAllowed: if null, no to-condition)
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
+     * @param minNumber The min number of memberId. (NullAllowed: if null, no from-condition)
+     * @param maxNumber The max number of memberId. (NullAllowed: if null, no to-condition)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
-    public void setMemnerId_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
-        regROO(minNumber, maxNumber, getCValueMemnerId(), "MEMNER_ID", rangeOfOption);
+    public void setMemberId_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
+        regROO(minNumber, maxNumber, getCValueMemberId(), "MEMBER_ID", rangeOfOption);
     }
 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
-     * @param memnerIdList The collection of memnerId as inScope. (NullAllowed: if null (or empty), no condition)
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
+     * @param memberIdList The collection of memberId as inScope. (NullAllowed: if null (or empty), no condition)
      */
-    public void setMemnerId_InScope(Collection<Integer> memnerIdList) {
-        doSetMemnerId_InScope(memnerIdList);
+    public void setMemberId_InScope(Collection<Integer> memberIdList) {
+        doSetMemberId_InScope(memberIdList);
     }
 
-    protected void doSetMemnerId_InScope(Collection<Integer> memnerIdList) {
-        regINS(CK_INS, cTL(memnerIdList), getCValueMemnerId(), "MEMNER_ID");
+    protected void doSetMemberId_InScope(Collection<Integer> memberIdList) {
+        regINS(CK_INS, cTL(memberIdList), getCValueMemberId(), "MEMBER_ID");
     }
 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
-     * @param memnerIdList The collection of memnerId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
+     * @param memberIdList The collection of memberId as notInScope. (NullAllowed: if null (or empty), no condition)
      */
-    public void setMemnerId_NotInScope(Collection<Integer> memnerIdList) {
-        doSetMemnerId_NotInScope(memnerIdList);
+    public void setMemberId_NotInScope(Collection<Integer> memberIdList) {
+        doSetMemberId_NotInScope(memberIdList);
     }
 
-    protected void doSetMemnerId_NotInScope(Collection<Integer> memnerIdList) {
-        regINS(CK_NINS, cTL(memnerIdList), getCValueMemnerId(), "MEMNER_ID");
+    protected void doSetMemberId_NotInScope(Collection<Integer> memberIdList) {
+        regINS(CK_NINS, cTL(memberIdList), getCValueMemberId(), "MEMBER_ID");
     }
 
     /**
@@ -163,10 +163,10 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         assertObjectNotNull("subQuery", subQuery);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForExistsReferrer(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_ExistsReferrer_MemberFollowingByMyMemberIdList(cb.query());
-        registerExistsReferrer(cb.query(), "MEMNER_ID", "MY_MEMBER_ID", pp, "memberFollowingByMyMemberIdList");
+        String pp = keepMemberId_ExistsReferrer_MemberFollowingByMyMemberIdList(cb.query());
+        registerExistsReferrer(cb.query(), "MEMBER_ID", "MY_MEMBER_ID", pp, "memberFollowingByMyMemberIdList");
     }
-    public abstract String keepMemnerId_ExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_ExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br />
@@ -185,15 +185,37 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         assertObjectNotNull("subQuery", subQuery);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForExistsReferrer(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_ExistsReferrer_MemberFollowingByYourMemberIdList(cb.query());
-        registerExistsReferrer(cb.query(), "MEMNER_ID", "YOUR_MEMBER_ID", pp, "memberFollowingByYourMemberIdList");
+        String pp = keepMemberId_ExistsReferrer_MemberFollowingByYourMemberIdList(cb.query());
+        registerExistsReferrer(cb.query(), "MEMBER_ID", "YOUR_MEMBER_ID", pp, "memberFollowingByYourMemberIdList");
     }
-    public abstract String keepMemnerId_ExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_ExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br />
-     * {exists (select MEMNER_ID from tweet where ...)} <br />
-     * tweet by MEMNER_ID, named 'tweetAsOne'.
+     * {exists (select MEMBER_ID from member_security where ...)} <br />
+     * member_security by MEMBER_ID, named 'memberSecurityAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #DD4747">existsMemberSecurityAsOne</span>(new SubQuery&lt;MemberSecurityCB&gt;() {
+     *     public void query(MemberSecurityCB subCB) {
+     *         subCB.query().setXxx...
+     *     }
+     * });
+     * </pre>
+     * @param subQuery The sub-query of MemberSecurityAsOne for 'exists'. (NotNull)
+     */
+    public void existsMemberSecurityAsOne(SubQuery<MemberSecurityCB> subQuery) {
+        assertObjectNotNull("subQuery", subQuery);
+        MemberSecurityCB cb = new MemberSecurityCB(); cb.xsetupForExistsReferrer(this);
+        try { lock(); subQuery.query(cb); } finally { unlock(); }
+        String pp = keepMemberId_ExistsReferrer_MemberSecurityAsOne(cb.query());
+        registerExistsReferrer(cb.query(), "MEMBER_ID", "MEMBER_ID", pp, "memberSecurityAsOne");
+    }
+    public abstract String keepMemberId_ExistsReferrer_MemberSecurityAsOne(MemberSecurityCQ sq);
+
+    /**
+     * Set up ExistsReferrer (correlated sub-query). <br />
+     * {exists (select MEMBER_ID from tweet where ...)} <br />
+     * tweet by MEMBER_ID, named 'tweetAsOne'.
      * <pre>
      * cb.query().<span style="color: #DD4747">existsTweetList</span>(new SubQuery&lt;TweetCB&gt;() {
      *     public void query(TweetCB subCB) {
@@ -207,10 +229,10 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         assertObjectNotNull("subQuery", subQuery);
         TweetCB cb = new TweetCB(); cb.xsetupForExistsReferrer(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_ExistsReferrer_TweetList(cb.query());
-        registerExistsReferrer(cb.query(), "MEMNER_ID", "MEMNER_ID", pp, "tweetList");
+        String pp = keepMemberId_ExistsReferrer_TweetList(cb.query());
+        registerExistsReferrer(cb.query(), "MEMBER_ID", "MEMBER_ID", pp, "tweetList");
     }
-    public abstract String keepMemnerId_ExistsReferrer_TweetList(TweetCQ sq);
+    public abstract String keepMemberId_ExistsReferrer_TweetList(TweetCQ sq);
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br />
@@ -223,16 +245,16 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
      *     }
      * });
      * </pre>
-     * @param subQuery The sub-query of MemnerId_NotExistsReferrer_MemberFollowingByMyMemberIdList for 'not exists'. (NotNull)
+     * @param subQuery The sub-query of MemberId_NotExistsReferrer_MemberFollowingByMyMemberIdList for 'not exists'. (NotNull)
      */
     public void notExistsMemberFollowingByMyMemberIdList(SubQuery<MemberFollowingCB> subQuery) {
         assertObjectNotNull("subQuery", subQuery);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForExistsReferrer(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_NotExistsReferrer_MemberFollowingByMyMemberIdList(cb.query());
-        registerNotExistsReferrer(cb.query(), "MEMNER_ID", "MY_MEMBER_ID", pp, "memberFollowingByMyMemberIdList");
+        String pp = keepMemberId_NotExistsReferrer_MemberFollowingByMyMemberIdList(cb.query());
+        registerNotExistsReferrer(cb.query(), "MEMBER_ID", "MY_MEMBER_ID", pp, "memberFollowingByMyMemberIdList");
     }
-    public abstract String keepMemnerId_NotExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_NotExistsReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br />
@@ -245,21 +267,43 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
      *     }
      * });
      * </pre>
-     * @param subQuery The sub-query of MemnerId_NotExistsReferrer_MemberFollowingByYourMemberIdList for 'not exists'. (NotNull)
+     * @param subQuery The sub-query of MemberId_NotExistsReferrer_MemberFollowingByYourMemberIdList for 'not exists'. (NotNull)
      */
     public void notExistsMemberFollowingByYourMemberIdList(SubQuery<MemberFollowingCB> subQuery) {
         assertObjectNotNull("subQuery", subQuery);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForExistsReferrer(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_NotExistsReferrer_MemberFollowingByYourMemberIdList(cb.query());
-        registerNotExistsReferrer(cb.query(), "MEMNER_ID", "YOUR_MEMBER_ID", pp, "memberFollowingByYourMemberIdList");
+        String pp = keepMemberId_NotExistsReferrer_MemberFollowingByYourMemberIdList(cb.query());
+        registerNotExistsReferrer(cb.query(), "MEMBER_ID", "YOUR_MEMBER_ID", pp, "memberFollowingByYourMemberIdList");
     }
-    public abstract String keepMemnerId_NotExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_NotExistsReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br />
-     * {not exists (select MEMNER_ID from tweet where ...)} <br />
-     * tweet by MEMNER_ID, named 'tweetAsOne'.
+     * {not exists (select MEMBER_ID from member_security where ...)} <br />
+     * member_security by MEMBER_ID, named 'memberSecurityAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #DD4747">notExistsMemberSecurityAsOne</span>(new SubQuery&lt;MemberSecurityCB&gt;() {
+     *     public void query(MemberSecurityCB subCB) {
+     *         subCB.query().setXxx...
+     *     }
+     * });
+     * </pre>
+     * @param subQuery The sub-query of MemberId_NotExistsReferrer_MemberSecurityAsOne for 'not exists'. (NotNull)
+     */
+    public void notExistsMemberSecurityAsOne(SubQuery<MemberSecurityCB> subQuery) {
+        assertObjectNotNull("subQuery", subQuery);
+        MemberSecurityCB cb = new MemberSecurityCB(); cb.xsetupForExistsReferrer(this);
+        try { lock(); subQuery.query(cb); } finally { unlock(); }
+        String pp = keepMemberId_NotExistsReferrer_MemberSecurityAsOne(cb.query());
+        registerNotExistsReferrer(cb.query(), "MEMBER_ID", "MEMBER_ID", pp, "memberSecurityAsOne");
+    }
+    public abstract String keepMemberId_NotExistsReferrer_MemberSecurityAsOne(MemberSecurityCQ sq);
+
+    /**
+     * Set up NotExistsReferrer (correlated sub-query). <br />
+     * {not exists (select MEMBER_ID from tweet where ...)} <br />
+     * tweet by MEMBER_ID, named 'tweetAsOne'.
      * <pre>
      * cb.query().<span style="color: #DD4747">notExistsTweetList</span>(new SubQuery&lt;TweetCB&gt;() {
      *     public void query(TweetCB subCB) {
@@ -267,16 +311,16 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
      *     }
      * });
      * </pre>
-     * @param subQuery The sub-query of MemnerId_NotExistsReferrer_TweetList for 'not exists'. (NotNull)
+     * @param subQuery The sub-query of MemberId_NotExistsReferrer_TweetList for 'not exists'. (NotNull)
      */
     public void notExistsTweetList(SubQuery<TweetCB> subQuery) {
         assertObjectNotNull("subQuery", subQuery);
         TweetCB cb = new TweetCB(); cb.xsetupForExistsReferrer(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_NotExistsReferrer_TweetList(cb.query());
-        registerNotExistsReferrer(cb.query(), "MEMNER_ID", "MEMNER_ID", pp, "tweetList");
+        String pp = keepMemberId_NotExistsReferrer_TweetList(cb.query());
+        registerNotExistsReferrer(cb.query(), "MEMBER_ID", "MEMBER_ID", pp, "tweetList");
     }
-    public abstract String keepMemnerId_NotExistsReferrer_TweetList(TweetCQ sq);
+    public abstract String keepMemberId_NotExistsReferrer_TweetList(TweetCQ sq);
 
     /**
      * Set up InScopeRelation (sub-query). <br />
@@ -288,10 +332,10 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         assertObjectNotNull("subQuery", subQuery);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_InScopeRelation_MemberFollowingByMyMemberIdList(cb.query());
-        registerInScopeRelation(cb.query(), "MEMNER_ID", "MY_MEMBER_ID", pp, "memberFollowingByMyMemberIdList");
+        String pp = keepMemberId_InScopeRelation_MemberFollowingByMyMemberIdList(cb.query());
+        registerInScopeRelation(cb.query(), "MEMBER_ID", "MY_MEMBER_ID", pp, "memberFollowingByMyMemberIdList");
     }
-    public abstract String keepMemnerId_InScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_InScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
 
     /**
      * Set up InScopeRelation (sub-query). <br />
@@ -303,25 +347,40 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         assertObjectNotNull("subQuery", subQuery);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_InScopeRelation_MemberFollowingByYourMemberIdList(cb.query());
-        registerInScopeRelation(cb.query(), "MEMNER_ID", "YOUR_MEMBER_ID", pp, "memberFollowingByYourMemberIdList");
+        String pp = keepMemberId_InScopeRelation_MemberFollowingByYourMemberIdList(cb.query());
+        registerInScopeRelation(cb.query(), "MEMBER_ID", "YOUR_MEMBER_ID", pp, "memberFollowingByYourMemberIdList");
     }
-    public abstract String keepMemnerId_InScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_InScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
 
     /**
      * Set up InScopeRelation (sub-query). <br />
-     * {in (select MEMNER_ID from tweet where ...)} <br />
-     * tweet by MEMNER_ID, named 'tweetAsOne'.
+     * {in (select MEMBER_ID from member_security where ...)} <br />
+     * member_security by MEMBER_ID, named 'memberSecurityAsOne'.
+     * @param subQuery The sub-query of MemberSecurityAsOne for 'in-scope'. (NotNull)
+     */
+    public void inScopeMemberSecurityAsOne(SubQuery<MemberSecurityCB> subQuery) {
+        assertObjectNotNull("subQuery", subQuery);
+        MemberSecurityCB cb = new MemberSecurityCB(); cb.xsetupForInScopeRelation(this);
+        try { lock(); subQuery.query(cb); } finally { unlock(); }
+        String pp = keepMemberId_InScopeRelation_MemberSecurityAsOne(cb.query());
+        registerInScopeRelation(cb.query(), "MEMBER_ID", "MEMBER_ID", pp, "memberSecurityAsOne");
+    }
+    public abstract String keepMemberId_InScopeRelation_MemberSecurityAsOne(MemberSecurityCQ sq);
+
+    /**
+     * Set up InScopeRelation (sub-query). <br />
+     * {in (select MEMBER_ID from tweet where ...)} <br />
+     * tweet by MEMBER_ID, named 'tweetAsOne'.
      * @param subQuery The sub-query of TweetList for 'in-scope'. (NotNull)
      */
     public void inScopeTweetList(SubQuery<TweetCB> subQuery) {
         assertObjectNotNull("subQuery", subQuery);
         TweetCB cb = new TweetCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_InScopeRelation_TweetList(cb.query());
-        registerInScopeRelation(cb.query(), "MEMNER_ID", "MEMNER_ID", pp, "tweetList");
+        String pp = keepMemberId_InScopeRelation_TweetList(cb.query());
+        registerInScopeRelation(cb.query(), "MEMBER_ID", "MEMBER_ID", pp, "tweetList");
     }
-    public abstract String keepMemnerId_InScopeRelation_TweetList(TweetCQ sq);
+    public abstract String keepMemberId_InScopeRelation_TweetList(TweetCQ sq);
 
     /**
      * Set up NotInScopeRelation (sub-query). <br />
@@ -333,10 +392,10 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         assertObjectNotNull("subQuery", subQuery);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_NotInScopeRelation_MemberFollowingByMyMemberIdList(cb.query());
-        registerNotInScopeRelation(cb.query(), "MEMNER_ID", "MY_MEMBER_ID", pp, "memberFollowingByMyMemberIdList");
+        String pp = keepMemberId_NotInScopeRelation_MemberFollowingByMyMemberIdList(cb.query());
+        registerNotInScopeRelation(cb.query(), "MEMBER_ID", "MY_MEMBER_ID", pp, "memberFollowingByMyMemberIdList");
     }
-    public abstract String keepMemnerId_NotInScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_NotInScopeRelation_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
 
     /**
      * Set up NotInScopeRelation (sub-query). <br />
@@ -348,52 +407,67 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         assertObjectNotNull("subQuery", subQuery);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_NotInScopeRelation_MemberFollowingByYourMemberIdList(cb.query());
-        registerNotInScopeRelation(cb.query(), "MEMNER_ID", "YOUR_MEMBER_ID", pp, "memberFollowingByYourMemberIdList");
+        String pp = keepMemberId_NotInScopeRelation_MemberFollowingByYourMemberIdList(cb.query());
+        registerNotInScopeRelation(cb.query(), "MEMBER_ID", "YOUR_MEMBER_ID", pp, "memberFollowingByYourMemberIdList");
     }
-    public abstract String keepMemnerId_NotInScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_NotInScopeRelation_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
 
     /**
      * Set up NotInScopeRelation (sub-query). <br />
-     * {not in (select MEMNER_ID from tweet where ...)} <br />
-     * tweet by MEMNER_ID, named 'tweetAsOne'.
+     * {not in (select MEMBER_ID from member_security where ...)} <br />
+     * member_security by MEMBER_ID, named 'memberSecurityAsOne'.
+     * @param subQuery The sub-query of MemberSecurityAsOne for 'not in-scope'. (NotNull)
+     */
+    public void notInScopeMemberSecurityAsOne(SubQuery<MemberSecurityCB> subQuery) {
+        assertObjectNotNull("subQuery", subQuery);
+        MemberSecurityCB cb = new MemberSecurityCB(); cb.xsetupForInScopeRelation(this);
+        try { lock(); subQuery.query(cb); } finally { unlock(); }
+        String pp = keepMemberId_NotInScopeRelation_MemberSecurityAsOne(cb.query());
+        registerNotInScopeRelation(cb.query(), "MEMBER_ID", "MEMBER_ID", pp, "memberSecurityAsOne");
+    }
+    public abstract String keepMemberId_NotInScopeRelation_MemberSecurityAsOne(MemberSecurityCQ sq);
+
+    /**
+     * Set up NotInScopeRelation (sub-query). <br />
+     * {not in (select MEMBER_ID from tweet where ...)} <br />
+     * tweet by MEMBER_ID, named 'tweetAsOne'.
      * @param subQuery The sub-query of TweetList for 'not in-scope'. (NotNull)
      */
     public void notInScopeTweetList(SubQuery<TweetCB> subQuery) {
         assertObjectNotNull("subQuery", subQuery);
         TweetCB cb = new TweetCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_NotInScopeRelation_TweetList(cb.query());
-        registerNotInScopeRelation(cb.query(), "MEMNER_ID", "MEMNER_ID", pp, "tweetList");
+        String pp = keepMemberId_NotInScopeRelation_TweetList(cb.query());
+        registerNotInScopeRelation(cb.query(), "MEMBER_ID", "MEMBER_ID", pp, "tweetList");
     }
-    public abstract String keepMemnerId_NotInScopeRelation_TweetList(TweetCQ sq);
+    public abstract String keepMemberId_NotInScopeRelation_TweetList(TweetCQ sq);
 
     public void xsderiveMemberFollowingByMyMemberIdList(String fn, SubQuery<MemberFollowingCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForDerivedReferrer(this);
         try { lock(); sq.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList(cb.query());
-        registerSpecifyDerivedReferrer(fn, cb.query(), "MEMNER_ID", "MY_MEMBER_ID", pp, "memberFollowingByMyMemberIdList", al, op);
+        String pp = keepMemberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList(cb.query());
+        registerSpecifyDerivedReferrer(fn, cb.query(), "MEMBER_ID", "MY_MEMBER_ID", pp, "memberFollowingByMyMemberIdList", al, op);
     }
-    public abstract String keepMemnerId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_SpecifyDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
 
     public void xsderiveMemberFollowingByYourMemberIdList(String fn, SubQuery<MemberFollowingCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForDerivedReferrer(this);
         try { lock(); sq.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList(cb.query());
-        registerSpecifyDerivedReferrer(fn, cb.query(), "MEMNER_ID", "YOUR_MEMBER_ID", pp, "memberFollowingByYourMemberIdList", al, op);
+        String pp = keepMemberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList(cb.query());
+        registerSpecifyDerivedReferrer(fn, cb.query(), "MEMBER_ID", "YOUR_MEMBER_ID", pp, "memberFollowingByYourMemberIdList", al, op);
     }
-    public abstract String keepMemnerId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_SpecifyDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
 
     public void xsderiveTweetList(String fn, SubQuery<TweetCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         TweetCB cb = new TweetCB(); cb.xsetupForDerivedReferrer(this);
         try { lock(); sq.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_SpecifyDerivedReferrer_TweetList(cb.query());
-        registerSpecifyDerivedReferrer(fn, cb.query(), "MEMNER_ID", "MEMNER_ID", pp, "tweetList", al, op);
+        String pp = keepMemberId_SpecifyDerivedReferrer_TweetList(cb.query());
+        registerSpecifyDerivedReferrer(fn, cb.query(), "MEMBER_ID", "MEMBER_ID", pp, "tweetList", al, op);
     }
-    public abstract String keepMemnerId_SpecifyDerivedReferrer_TweetList(TweetCQ sq);
+    public abstract String keepMemberId_SpecifyDerivedReferrer_TweetList(TweetCQ sq);
 
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br />
@@ -423,11 +497,11 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         assertObjectNotNull("subQuery", sq);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForDerivedReferrer(this);
         try { lock(); sq.query(cb); } finally { unlock(); }
-        String sqpp = keepMemnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList(cb.query()); String prpp = keepMemnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter(vl);
-        registerQueryDerivedReferrer(fn, cb.query(), "MEMNER_ID", "MY_MEMBER_ID", sqpp, "memberFollowingByMyMemberIdList", rd, vl, prpp, op);
+        String sqpp = keepMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList(cb.query()); String prpp = keepMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter(vl);
+        registerQueryDerivedReferrer(fn, cb.query(), "MEMBER_ID", "MY_MEMBER_ID", sqpp, "memberFollowingByMyMemberIdList", rd, vl, prpp, op);
     }
-    public abstract String keepMemnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
-    public abstract String keepMemnerId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter(Object vl);
+    public abstract String keepMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_QueryDerivedReferrer_MemberFollowingByMyMemberIdListParameter(Object vl);
 
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br />
@@ -457,16 +531,16 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         assertObjectNotNull("subQuery", sq);
         MemberFollowingCB cb = new MemberFollowingCB(); cb.xsetupForDerivedReferrer(this);
         try { lock(); sq.query(cb); } finally { unlock(); }
-        String sqpp = keepMemnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList(cb.query()); String prpp = keepMemnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter(vl);
-        registerQueryDerivedReferrer(fn, cb.query(), "MEMNER_ID", "YOUR_MEMBER_ID", sqpp, "memberFollowingByYourMemberIdList", rd, vl, prpp, op);
+        String sqpp = keepMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList(cb.query()); String prpp = keepMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter(vl);
+        registerQueryDerivedReferrer(fn, cb.query(), "MEMBER_ID", "YOUR_MEMBER_ID", sqpp, "memberFollowingByYourMemberIdList", rd, vl, prpp, op);
     }
-    public abstract String keepMemnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
-    public abstract String keepMemnerId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter(Object vl);
+    public abstract String keepMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdList(MemberFollowingCQ sq);
+    public abstract String keepMemberId_QueryDerivedReferrer_MemberFollowingByYourMemberIdListParameter(Object vl);
 
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br />
      * {FOO &lt;= (select max(BAR) from tweet where ...)} <br />
-     * tweet by MEMNER_ID, named 'tweetAsOne'.
+     * tweet by MEMBER_ID, named 'tweetAsOne'.
      * <pre>
      * cb.query().<span style="color: #DD4747">derivedTweetList()</span>.<span style="color: #DD4747">max</span>(new SubQuery&lt;TweetCB&gt;() {
      *     public void query(TweetCB subCB) {
@@ -491,26 +565,26 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         assertObjectNotNull("subQuery", sq);
         TweetCB cb = new TweetCB(); cb.xsetupForDerivedReferrer(this);
         try { lock(); sq.query(cb); } finally { unlock(); }
-        String sqpp = keepMemnerId_QueryDerivedReferrer_TweetList(cb.query()); String prpp = keepMemnerId_QueryDerivedReferrer_TweetListParameter(vl);
-        registerQueryDerivedReferrer(fn, cb.query(), "MEMNER_ID", "MEMNER_ID", sqpp, "tweetList", rd, vl, prpp, op);
+        String sqpp = keepMemberId_QueryDerivedReferrer_TweetList(cb.query()); String prpp = keepMemberId_QueryDerivedReferrer_TweetListParameter(vl);
+        registerQueryDerivedReferrer(fn, cb.query(), "MEMBER_ID", "MEMBER_ID", sqpp, "tweetList", rd, vl, prpp, op);
     }
-    public abstract String keepMemnerId_QueryDerivedReferrer_TweetList(TweetCQ sq);
-    public abstract String keepMemnerId_QueryDerivedReferrer_TweetListParameter(Object vl);
+    public abstract String keepMemberId_QueryDerivedReferrer_TweetList(TweetCQ sq);
+    public abstract String keepMemberId_QueryDerivedReferrer_TweetListParameter(Object vl);
 
     /**
      * IsNull {is null}. And OnlyOnceRegistered. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
      */
-    public void setMemnerId_IsNull() { regMemnerId(CK_ISN, DOBJ); }
+    public void setMemberId_IsNull() { regMemberId(CK_ISN, DOBJ); }
 
     /**
      * IsNotNull {is not null}. And OnlyOnceRegistered. <br />
-     * MEMNER_ID: {PK, ID, NotNull, INT(10)}
+     * MEMBER_ID: {PK, ID, NotNull, INT(10)}
      */
-    public void setMemnerId_IsNotNull() { regMemnerId(CK_ISNN, DOBJ); }
+    public void setMemberId_IsNotNull() { regMemberId(CK_ISNN, DOBJ); }
 
-    protected void regMemnerId(ConditionKey ky, Object vl) { regQ(ky, vl, getCValueMemnerId(), "MEMNER_ID"); }
-    protected abstract ConditionValue getCValueMemnerId();
+    protected void regMemberId(ConditionKey ky, Object vl) { regQ(ky, vl, getCValueMemberId(), "MEMBER_ID"); }
+    protected abstract ConditionValue getCValueMemberId();
 
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
@@ -758,7 +832,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
 
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @param memberStatusCode The value of memberStatusCode as equal. (NullAllowed: if null (or empty), no condition)
      */
     public void setMemberStatusCode_Equal(String memberStatusCode) {
@@ -771,7 +845,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
 
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @param memberStatusCode The value of memberStatusCode as notEqual. (NullAllowed: if null (or empty), no condition)
      */
     public void setMemberStatusCode_NotEqual(String memberStatusCode) {
@@ -784,7 +858,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
 
     /**
      * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @param memberStatusCode The value of memberStatusCode as greaterThan. (NullAllowed: if null (or empty), no condition)
      */
     public void setMemberStatusCode_GreaterThan(String memberStatusCode) {
@@ -793,7 +867,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
 
     /**
      * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @param memberStatusCode The value of memberStatusCode as lessThan. (NullAllowed: if null (or empty), no condition)
      */
     public void setMemberStatusCode_LessThan(String memberStatusCode) {
@@ -802,7 +876,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
 
     /**
      * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @param memberStatusCode The value of memberStatusCode as greaterEqual. (NullAllowed: if null (or empty), no condition)
      */
     public void setMemberStatusCode_GreaterEqual(String memberStatusCode) {
@@ -811,7 +885,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
 
     /**
      * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @param memberStatusCode The value of memberStatusCode as lessEqual. (NullAllowed: if null (or empty), no condition)
      */
     public void setMemberStatusCode_LessEqual(String memberStatusCode) {
@@ -820,7 +894,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
 
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @param memberStatusCodeList The collection of memberStatusCode as inScope. (NullAllowed: if null (or empty), no condition)
      */
     public void setMemberStatusCode_InScope(Collection<String> memberStatusCodeList) {
@@ -833,7 +907,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
 
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @param memberStatusCodeList The collection of memberStatusCode as notInScope. (NullAllowed: if null (or empty), no condition)
      */
     public void setMemberStatusCode_NotInScope(Collection<String> memberStatusCodeList) {
@@ -846,7 +920,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
 
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @param memberStatusCode The value of memberStatusCode as prefixSearch. (NullAllowed: if null (or empty), no condition)
      */
     public void setMemberStatusCode_PrefixSearch(String memberStatusCode) {
@@ -855,7 +929,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
 
     /**
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)} <br />
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status} <br />
      * <pre>e.g. setMemberStatusCode_LikeSearch("xxx", new <span style="color: #DD4747">LikeSearchOption</span>().likeContain());</pre>
      * @param memberStatusCode The value of memberStatusCode as likeSearch. (NullAllowed: if null (or empty), no condition)
      * @param likeSearchOption The option of like-search. (NotNull)
@@ -867,7 +941,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
     /**
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br />
      * And NullOrEmptyIgnored, SeveralRegistered. <br />
-     * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+     * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
      * @param memberStatusCode The value of memberStatusCode as notLikeSearch. (NullAllowed: if null (or empty), no condition)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
@@ -875,130 +949,38 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         regLSQ(CK_NLS, fRES(memberStatusCode), getCValueMemberStatusCode(), "MEMBER_STATUS_CODE", likeSearchOption);
     }
 
+    /**
+     * Set up InScopeRelation (sub-query). <br />
+     * {in (select MEMBER_STATUS_CODE from member_status where ...)} <br />
+     * member_status by my MEMBER_STATUS_CODE, named 'memberStatus'.
+     * @param subQuery The sub-query of MemberStatus for 'in-scope'. (NotNull)
+     */
+    public void inScopeMemberStatus(SubQuery<MemberStatusCB> subQuery) {
+        assertObjectNotNull("subQuery", subQuery);
+        MemberStatusCB cb = new MemberStatusCB(); cb.xsetupForInScopeRelation(this);
+        try { lock(); subQuery.query(cb); } finally { unlock(); }
+        String pp = keepMemberStatusCode_InScopeRelation_MemberStatus(cb.query());
+        registerInScopeRelation(cb.query(), "MEMBER_STATUS_CODE", "MEMBER_STATUS_CODE", pp, "memberStatus");
+    }
+    public abstract String keepMemberStatusCode_InScopeRelation_MemberStatus(MemberStatusCQ sq);
+
+    /**
+     * Set up NotInScopeRelation (sub-query). <br />
+     * {not in (select MEMBER_STATUS_CODE from member_status where ...)} <br />
+     * member_status by my MEMBER_STATUS_CODE, named 'memberStatus'.
+     * @param subQuery The sub-query of MemberStatus for 'not in-scope'. (NotNull)
+     */
+    public void notInScopeMemberStatus(SubQuery<MemberStatusCB> subQuery) {
+        assertObjectNotNull("subQuery", subQuery);
+        MemberStatusCB cb = new MemberStatusCB(); cb.xsetupForInScopeRelation(this);
+        try { lock(); subQuery.query(cb); } finally { unlock(); }
+        String pp = keepMemberStatusCode_NotInScopeRelation_MemberStatus(cb.query());
+        registerNotInScopeRelation(cb.query(), "MEMBER_STATUS_CODE", "MEMBER_STATUS_CODE", pp, "memberStatus");
+    }
+    public abstract String keepMemberStatusCode_NotInScopeRelation_MemberStatus(MemberStatusCQ sq);
+
     protected void regMemberStatusCode(ConditionKey ky, Object vl) { regQ(ky, vl, getCValueMemberStatusCode(), "MEMBER_STATUS_CODE"); }
     protected abstract ConditionValue getCValueMemberStatusCode();
-
-    /**
-     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @param memberPassword The value of memberPassword as equal. (NullAllowed: if null (or empty), no condition)
-     */
-    public void setMemberPassword_Equal(String memberPassword) {
-        doSetMemberPassword_Equal(fRES(memberPassword));
-    }
-
-    protected void doSetMemberPassword_Equal(String memberPassword) {
-        regMemberPassword(CK_EQ, memberPassword);
-    }
-
-    /**
-     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @param memberPassword The value of memberPassword as notEqual. (NullAllowed: if null (or empty), no condition)
-     */
-    public void setMemberPassword_NotEqual(String memberPassword) {
-        doSetMemberPassword_NotEqual(fRES(memberPassword));
-    }
-
-    protected void doSetMemberPassword_NotEqual(String memberPassword) {
-        regMemberPassword(CK_NES, memberPassword);
-    }
-
-    /**
-     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @param memberPassword The value of memberPassword as greaterThan. (NullAllowed: if null (or empty), no condition)
-     */
-    public void setMemberPassword_GreaterThan(String memberPassword) {
-        regMemberPassword(CK_GT, fRES(memberPassword));
-    }
-
-    /**
-     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @param memberPassword The value of memberPassword as lessThan. (NullAllowed: if null (or empty), no condition)
-     */
-    public void setMemberPassword_LessThan(String memberPassword) {
-        regMemberPassword(CK_LT, fRES(memberPassword));
-    }
-
-    /**
-     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @param memberPassword The value of memberPassword as greaterEqual. (NullAllowed: if null (or empty), no condition)
-     */
-    public void setMemberPassword_GreaterEqual(String memberPassword) {
-        regMemberPassword(CK_GE, fRES(memberPassword));
-    }
-
-    /**
-     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @param memberPassword The value of memberPassword as lessEqual. (NullAllowed: if null (or empty), no condition)
-     */
-    public void setMemberPassword_LessEqual(String memberPassword) {
-        regMemberPassword(CK_LE, fRES(memberPassword));
-    }
-
-    /**
-     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @param memberPasswordList The collection of memberPassword as inScope. (NullAllowed: if null (or empty), no condition)
-     */
-    public void setMemberPassword_InScope(Collection<String> memberPasswordList) {
-        doSetMemberPassword_InScope(memberPasswordList);
-    }
-
-    public void doSetMemberPassword_InScope(Collection<String> memberPasswordList) {
-        regINS(CK_INS, cTL(memberPasswordList), getCValueMemberPassword(), "MEMBER_PASSWORD");
-    }
-
-    /**
-     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @param memberPasswordList The collection of memberPassword as notInScope. (NullAllowed: if null (or empty), no condition)
-     */
-    public void setMemberPassword_NotInScope(Collection<String> memberPasswordList) {
-        doSetMemberPassword_NotInScope(memberPasswordList);
-    }
-
-    public void doSetMemberPassword_NotInScope(Collection<String> memberPasswordList) {
-        regINS(CK_NINS, cTL(memberPasswordList), getCValueMemberPassword(), "MEMBER_PASSWORD");
-    }
-
-    /**
-     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @param memberPassword The value of memberPassword as prefixSearch. (NullAllowed: if null (or empty), no condition)
-     */
-    public void setMemberPassword_PrefixSearch(String memberPassword) {
-        setMemberPassword_LikeSearch(memberPassword, cLSOP());
-    }
-
-    /**
-     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)} <br />
-     * <pre>e.g. setMemberPassword_LikeSearch("xxx", new <span style="color: #DD4747">LikeSearchOption</span>().likeContain());</pre>
-     * @param memberPassword The value of memberPassword as likeSearch. (NullAllowed: if null (or empty), no condition)
-     * @param likeSearchOption The option of like-search. (NotNull)
-     */
-    public void setMemberPassword_LikeSearch(String memberPassword, LikeSearchOption likeSearchOption) {
-        regLSQ(CK_LS, fRES(memberPassword), getCValueMemberPassword(), "MEMBER_PASSWORD", likeSearchOption);
-    }
-
-    /**
-     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br />
-     * And NullOrEmptyIgnored, SeveralRegistered. <br />
-     * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-     * @param memberPassword The value of memberPassword as notLikeSearch. (NullAllowed: if null (or empty), no condition)
-     * @param likeSearchOption The option of not-like-search. (NotNull)
-     */
-    public void setMemberPassword_NotLikeSearch(String memberPassword, LikeSearchOption likeSearchOption) {
-        regLSQ(CK_NLS, fRES(memberPassword), getCValueMemberPassword(), "MEMBER_PASSWORD", likeSearchOption);
-    }
-
-    protected void regMemberPassword(ConditionKey ky, Object vl) { regQ(ky, vl, getCValueMemberPassword(), "MEMBER_PASSWORD"); }
-    protected abstract ConditionValue getCValueMemberPassword();
 
     // ===================================================================================
     //                                                                     ScalarCondition
@@ -1131,7 +1113,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
         MemberCB cb = new MemberCB(); cb.xsetupForDerivedReferrer(this);
         try { lock(); sq.query(cb); } finally { unlock(); }
         String pp = keepSpecifyMyselfDerived(cb.query());
-        String pk = "MEMNER_ID";
+        String pk = "MEMBER_ID";
         registerSpecifyMyselfDerived(fn, cb.query(), pk, pk, pp, "myselfDerived", al, op);
     }
     public abstract String keepSpecifyMyselfDerived(MemberCQ sq);
@@ -1147,7 +1129,7 @@ public abstract class AbstractBsMemberCQ extends AbstractConditionQuery {
     protected <CB extends ConditionBean> void xqderiveMyselfDerived(String fn, SubQuery<CB> sq, String rd, Object vl, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         MemberCB cb = new MemberCB(); cb.xsetupForDerivedReferrer(this); sq.query((CB)cb);
-        String pk = "MEMNER_ID";
+        String pk = "MEMBER_ID";
         String sqpp = keepQueryMyselfDerived(cb.query()); // for saving query-value.
         String prpp = keepQueryMyselfDerivedParameter(vl);
         registerQueryMyselfDerived(fn, cb.query(), pk, pk, sqpp, "myselfDerived", rd, vl, prpp, op);

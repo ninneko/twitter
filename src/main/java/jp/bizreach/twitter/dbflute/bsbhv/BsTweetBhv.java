@@ -21,7 +21,7 @@ import jp.bizreach.twitter.dbflute.cbean.*;
  *     TWEET_ID
  *
  * [column]
- *     TWEET_ID, MEMNER_ID, TWEET_MESSAGE, TWEET_DATETIE
+ *     TWEET_ID, MEMBER_ID, TWEET_MESSAGE, TWEET_DATETIE
  *
  * [sequence]
  *     

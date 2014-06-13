@@ -270,7 +270,7 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
     protected void xsetupOuterJoinMemberByMyMemberId() {
         MemberCQ cq = getConditionQueryMemberByMyMemberId();
         Map<String, String> joinOnMap = newLinkedHashMapSized(4);
-        joinOnMap.put("MY_MEMBER_ID", "MEMNER_ID");
+        joinOnMap.put("MY_MEMBER_ID", "MEMBER_ID");
         registerOuterJoin(cq, joinOnMap, "memberByMyMemberId");
     }
     public boolean hasConditionQueryMemberByMyMemberId() {
@@ -304,7 +304,7 @@ public class BsMemberFollowingCQ extends AbstractBsMemberFollowingCQ {
     protected void xsetupOuterJoinMemberByYourMemberId() {
         MemberCQ cq = getConditionQueryMemberByYourMemberId();
         Map<String, String> joinOnMap = newLinkedHashMapSized(4);
-        joinOnMap.put("YOUR_MEMBER_ID", "MEMNER_ID");
+        joinOnMap.put("YOUR_MEMBER_ID", "MEMBER_ID");
         registerOuterJoin(cq, joinOnMap, "memberByYourMemberId");
     }
     public boolean hasConditionQueryMemberByYourMemberId() {

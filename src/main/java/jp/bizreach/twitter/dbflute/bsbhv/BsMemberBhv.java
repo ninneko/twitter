@@ -18,28 +18,28 @@ import jp.bizreach.twitter.dbflute.cbean.*;
  * The behavior of MEMBER as TABLE. <br />
  * <pre>
  * [primary key]
- *     MEMNER_ID
+ *     MEMBER_ID
  *
  * [column]
- *     MEMNER_ID, MEMBER_NAME, MEMBER_ACCOUNT, MEMBER_STATUS_CODE, MEMBER_PASSWORD
+ *     MEMBER_ID, MEMBER_NAME, MEMBER_ACCOUNT, MEMBER_STATUS_CODE
  *
  * [sequence]
  *     
  *
  * [identity]
- *     MEMNER_ID
+ *     MEMBER_ID
  *
  * [version-no]
  *     
  *
  * [foreign table]
- *     
+ *     member_status, member_security(AsOne)
  *
  * [referrer table]
- *     member_following, tweet
+ *     member_following, tweet, member_security
  *
  * [foreign property]
- *     
+ *     memberStatus, memberSecurityAsOne
  *
  * [referrer property]
  *     memberFollowingByMyMemberIdList, memberFollowingByYourMemberIdList, tweetList
@@ -190,42 +190,42 @@ public abstract class BsMemberBhv extends AbstractBehaviorWritable {
 
     /**
      * Select the entity by the primary-key value.
-     * @param memnerId : PK, ID, NotNull, INT(10). (NotNull)
+     * @param memberId : PK, ID, NotNull, INT(10). (NotNull)
      * @return The entity selected by the PK. (NullAllowed: if no data, it returns null)
      * @exception EntityDuplicatedException When the entity has been duplicated.
      * @exception SelectEntityConditionNotFoundException When the condition for selecting an entity is not found.
      */
-    public Member selectByPKValue(Integer memnerId) {
-        return doSelectByPK(memnerId, Member.class);
+    public Member selectByPKValue(Integer memberId) {
+        return doSelectByPK(memberId, Member.class);
     }
 
-    protected <ENTITY extends Member> ENTITY doSelectByPK(Integer memnerId, Class<ENTITY> entityType) {
-        return doSelectEntity(xprepareCBAsPK(memnerId), entityType);
+    protected <ENTITY extends Member> ENTITY doSelectByPK(Integer memberId, Class<ENTITY> entityType) {
+        return doSelectEntity(xprepareCBAsPK(memberId), entityType);
     }
 
-    protected <ENTITY extends Member> OptionalEntity<ENTITY> doSelectOptionalByPK(Integer memnerId, Class<ENTITY> entityType) {
-        return createOptionalEntity(doSelectByPK(memnerId, entityType), memnerId);
+    protected <ENTITY extends Member> OptionalEntity<ENTITY> doSelectOptionalByPK(Integer memberId, Class<ENTITY> entityType) {
+        return createOptionalEntity(doSelectByPK(memberId, entityType), memberId);
     }
 
     /**
      * Select the entity by the primary-key value with deleted check.
-     * @param memnerId : PK, ID, NotNull, INT(10). (NotNull)
+     * @param memberId : PK, ID, NotNull, INT(10). (NotNull)
      * @return The entity selected by the PK. (NotNull: if no data, throws exception)
      * @exception EntityAlreadyDeletedException When the entity has already been deleted. (not found)
      * @exception EntityDuplicatedException When the entity has been duplicated.
      * @exception SelectEntityConditionNotFoundException When the condition for selecting an entity is not found.
      */
-    public Member selectByPKValueWithDeletedCheck(Integer memnerId) {
-        return doSelectByPKWithDeletedCheck(memnerId, Member.class);
+    public Member selectByPKValueWithDeletedCheck(Integer memberId) {
+        return doSelectByPKWithDeletedCheck(memberId, Member.class);
     }
 
-    protected <ENTITY extends Member> ENTITY doSelectByPKWithDeletedCheck(Integer memnerId, Class<ENTITY> entityType) {
-        return doSelectEntityWithDeletedCheck(xprepareCBAsPK(memnerId), entityType);
+    protected <ENTITY extends Member> ENTITY doSelectByPKWithDeletedCheck(Integer memberId, Class<ENTITY> entityType) {
+        return doSelectEntityWithDeletedCheck(xprepareCBAsPK(memberId), entityType);
     }
 
-    protected MemberCB xprepareCBAsPK(Integer memnerId) {
-        assertObjectNotNull("memnerId", memnerId);
-        MemberCB cb = newMyConditionBean(); cb.acceptPrimaryKey(memnerId);
+    protected MemberCB xprepareCBAsPK(Integer memberId) {
+        assertObjectNotNull("memberId", memberId);
+        MemberCB cb = newMyConditionBean(); cb.acceptPrimaryKey(memberId);
         return cb;
     }
 
@@ -497,7 +497,7 @@ public abstract class BsMemberBhv extends AbstractBehaviorWritable {
         final MemberFollowingBhv referrerBhv = xgetBSFLR().select(MemberFollowingBhv.class);
         return helpLoadReferrerInternally(memberList, option, new InternalLoadReferrerCallback<Member, Integer, MemberFollowingCB, MemberFollowing>() {
             public Integer getPKVal(Member et)
-            { return et.getMemnerId(); }
+            { return et.getMemberId(); }
             public void setRfLs(Member et, List<MemberFollowing> ls)
             { et.setMemberFollowingByMyMemberIdList(ls); }
             public MemberFollowingCB newMyCB() { return referrerBhv.newMyConditionBean(); }
@@ -605,7 +605,7 @@ public abstract class BsMemberBhv extends AbstractBehaviorWritable {
         final MemberFollowingBhv referrerBhv = xgetBSFLR().select(MemberFollowingBhv.class);
         return helpLoadReferrerInternally(memberList, option, new InternalLoadReferrerCallback<Member, Integer, MemberFollowingCB, MemberFollowing>() {
             public Integer getPKVal(Member et)
-            { return et.getMemnerId(); }
+            { return et.getMemberId(); }
             public void setRfLs(Member et, List<MemberFollowing> ls)
             { et.setMemberFollowingByYourMemberIdList(ls); }
             public MemberFollowingCB newMyCB() { return referrerBhv.newMyConditionBean(); }
@@ -623,7 +623,7 @@ public abstract class BsMemberBhv extends AbstractBehaviorWritable {
 
     /**
      * Load referrer of tweetList by the set-upper of referrer. <br />
-     * tweet by MEMNER_ID, named 'tweetList'.
+     * tweet by MEMBER_ID, named 'tweetList'.
      * <pre>
      * memberBhv.<span style="color: #DD4747">loadTweetList</span>(memberList, new ConditionBeanSetupper&lt;TweetCB&gt;() {
      *     public void setup(TweetCB cb) {
@@ -642,8 +642,8 @@ public abstract class BsMemberBhv extends AbstractBehaviorWritable {
      * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br />
      * The condition-bean, which the set-upper provides, has settings before callback as follows:
      * <pre>
-     * cb.query().setMemnerId_InScope(pkList);
-     * cb.query().addOrderBy_MemnerId_Asc();
+     * cb.query().setMemberId_InScope(pkList);
+     * cb.query().addOrderBy_MemberId_Asc();
      * </pre>
      * @param memberList The entity list of member. (NotNull)
      * @param setupper The callback to set up referrer condition-bean for loading referrer. (NotNull)
@@ -656,7 +656,7 @@ public abstract class BsMemberBhv extends AbstractBehaviorWritable {
 
     /**
      * Load referrer of tweetList by the set-upper of referrer. <br />
-     * tweet by MEMNER_ID, named 'tweetList'.
+     * tweet by MEMBER_ID, named 'tweetList'.
      * <pre>
      * memberBhv.<span style="color: #DD4747">loadTweetList</span>(memberList, new ConditionBeanSetupper&lt;TweetCB&gt;() {
      *     public void setup(TweetCB cb) {
@@ -673,8 +673,8 @@ public abstract class BsMemberBhv extends AbstractBehaviorWritable {
      * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br />
      * The condition-bean, which the set-upper provides, has settings before callback as follows:
      * <pre>
-     * cb.query().setMemnerId_InScope(pkList);
-     * cb.query().addOrderBy_MemnerId_Asc();
+     * cb.query().setMemberId_InScope(pkList);
+     * cb.query().addOrderBy_MemberId_Asc();
      * </pre>
      * @param member The entity of member. (NotNull)
      * @param setupper The callback to set up referrer condition-bean for loading referrer. (NotNull)
@@ -713,16 +713,16 @@ public abstract class BsMemberBhv extends AbstractBehaviorWritable {
         final TweetBhv referrerBhv = xgetBSFLR().select(TweetBhv.class);
         return helpLoadReferrerInternally(memberList, option, new InternalLoadReferrerCallback<Member, Integer, TweetCB, Tweet>() {
             public Integer getPKVal(Member et)
-            { return et.getMemnerId(); }
+            { return et.getMemberId(); }
             public void setRfLs(Member et, List<Tweet> ls)
             { et.setTweetList(ls); }
             public TweetCB newMyCB() { return referrerBhv.newMyConditionBean(); }
             public void qyFKIn(TweetCB cb, List<Integer> ls)
-            { cb.query().setMemnerId_InScope(ls); }
-            public void qyOdFKAsc(TweetCB cb) { cb.query().addOrderBy_MemnerId_Asc(); }
-            public void spFKCol(TweetCB cb) { cb.specify().columnMemnerId(); }
+            { cb.query().setMemberId_InScope(ls); }
+            public void qyOdFKAsc(TweetCB cb) { cb.query().addOrderBy_MemberId_Asc(); }
+            public void spFKCol(TweetCB cb) { cb.specify().columnMemberId(); }
             public List<Tweet> selRfLs(TweetCB cb) { return referrerBhv.selectList(cb); }
-            public Integer getFKVal(Tweet re) { return re.getMemnerId(); }
+            public Integer getFKVal(Tweet re) { return re.getMemberId(); }
             public void setlcEt(Tweet re, Member le)
             { re.setMember(le); }
             public String getRfPrNm() { return "tweetList"; }
@@ -732,18 +732,46 @@ public abstract class BsMemberBhv extends AbstractBehaviorWritable {
     // ===================================================================================
     //                                                                   Pull out Relation
     //                                                                   =================
+    /**
+     * Pull out the list of foreign table 'MemberStatus'.
+     * @param memberList The list of member. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MemberStatus> pulloutMemberStatus(List<Member> memberList) {
+        return helpPulloutInternally(memberList, new InternalPulloutCallback<Member, MemberStatus>() {
+            public MemberStatus getFr(Member et)
+            { return et.getMemberStatus(); }
+            public boolean hasRf() { return true; }
+            public void setRfLs(MemberStatus et, List<Member> ls)
+            { et.setMemberList(ls); }
+        });
+    }
+    /**
+     * Pull out the list of referrer-as-one table 'MemberSecurity'.
+     * @param memberList The list of member. (NotNull, EmptyAllowed)
+     * @return The list of referrer-as-one table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MemberSecurity> pulloutMemberSecurityAsOne(List<Member> memberList) {
+        return helpPulloutInternally(memberList, new InternalPulloutCallback<Member, MemberSecurity>() {
+            public MemberSecurity getFr(Member et)
+            { return et.getMemberSecurityAsOne(); }
+            public boolean hasRf() { return true; }
+            public void setRfLs(MemberSecurity et, List<Member> ls)
+            { if (!ls.isEmpty()) { et.setMember(ls.get(0)); } }
+        });
+    }
 
     // ===================================================================================
     //                                                                      Extract Column
     //                                                                      ==============
     /**
-     * Extract the value list of (single) primary key memnerId.
+     * Extract the value list of (single) primary key memberId.
      * @param memberList The list of member. (NotNull, EmptyAllowed)
      * @return The list of the column value. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<Integer> extractMemnerIdList(List<Member> memberList) {
+    public List<Integer> extractMemberIdList(List<Member> memberList) {
         return helpExtractListInternally(memberList, new InternalExtractCallback<Member, Integer>() {
-            public Integer getCV(Member et) { return et.getMemnerId(); }
+            public Integer getCV(Member et) { return et.getMemberId(); }
         });
     }
 

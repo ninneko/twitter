@@ -13,7 +13,7 @@
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-package jp.bizreach.twitter.app.web;
+package jp.bizreach.twitter.app.action;
 
 import org.seasar.struts.annotation.Execute;
 
@@ -26,4 +26,5 @@ public class IndexAction {
     public String index() {
         return "index.jsp";
     }
+
 }

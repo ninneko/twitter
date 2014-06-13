@@ -1,3 +1,4 @@
-#Fri Sep 26 21:06:24 JST 2008
 eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/view/login/loginForm.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/view/mypage/index.jsp=UTF-8
 encoding/<project>=UTF-8

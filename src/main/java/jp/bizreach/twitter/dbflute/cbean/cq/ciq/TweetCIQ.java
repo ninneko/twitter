@@ -62,11 +62,11 @@ public class TweetCIQ extends AbstractBsTweetCQ {
     //                                                                Override about Query
     //                                                                ====================
     protected ConditionValue getCValueTweetId() { return _myCQ.getTweetId(); }
-    protected ConditionValue getCValueMemnerId() { return _myCQ.getMemnerId(); }
-    public String keepMemnerId_InScopeRelation_Member(MemberCQ sq)
-    { return _myCQ.keepMemnerId_InScopeRelation_Member(sq); }
-    public String keepMemnerId_NotInScopeRelation_Member(MemberCQ sq)
-    { return _myCQ.keepMemnerId_NotInScopeRelation_Member(sq); }
+    protected ConditionValue getCValueMemberId() { return _myCQ.getMemberId(); }
+    public String keepMemberId_InScopeRelation_Member(MemberCQ sq)
+    { return _myCQ.keepMemberId_InScopeRelation_Member(sq); }
+    public String keepMemberId_NotInScopeRelation_Member(MemberCQ sq)
+    { return _myCQ.keepMemberId_NotInScopeRelation_Member(sq); }
     protected ConditionValue getCValueTweetMessage() { return _myCQ.getTweetMessage(); }
     protected ConditionValue getCValueTweetDatetie() { return _myCQ.getTweetDatetie(); }
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String pp) { return null; }

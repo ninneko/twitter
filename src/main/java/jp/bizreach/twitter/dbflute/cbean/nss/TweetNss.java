@@ -21,9 +21,11 @@ public class TweetNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br />
-     * member by my MEMNER_ID, named 'member'.
+     * member by my MEMBER_ID, named 'member'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public void withMember() {
+    public MemberNss withMember() {
         _query.doNss(new TweetCQ.NssCall() { public ConditionQuery qf() { return _query.queryMember(); }});
+        return new MemberNss(_query.queryMember());
     }
 }

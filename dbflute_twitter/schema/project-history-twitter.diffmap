@@ -1,0 +1,101 @@
+map:{
+    ; 2014/06/11 19:11:29 = map:{
+        ; diffDate = 2014/06/11 19:11:29
+        ; tableCount = map:{
+            ; next = 5
+            ; previous = 3
+        }
+        ; tableDiff = map:{
+            ; member_security = map:{
+                ; tableName = member_security
+                ; diffType = ADD
+            }
+            ; member_status = map:{
+                ; tableName = member_status
+                ; diffType = ADD
+            }
+            ; member = map:{
+                ; tableName = member
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; MEMBER_ID = map:{
+                        ; columnName = MEMBER_ID
+                        ; diffType = ADD
+                    }
+                    ; MEMNER_ID = map:{
+                        ; columnName = MEMNER_ID
+                        ; diffType = DELETE
+                    }
+                    ; MEMBER_PASSWORD = map:{
+                        ; columnName = MEMBER_PASSWORD
+                        ; diffType = DELETE
+                    }
+                }
+                ; primaryKeyDiff = map:{
+                    ; PRIMARY = map:{
+                        ; constraintName = PRIMARY
+                        ; diffType = CHANGE
+                        ; columnDiff = map:{
+                            ; next = MEMBER_ID
+                            ; previous = MEMNER_ID
+                        }
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; member_ibfk_1(new) = map:{
+                        ; constraintName = member_ibfk_1(new)
+                        ; diffType = ADD
+                    }
+                }
+                ; indexDiff = map:{
+                    ; MEMBER_STATUS_CODE = map:{
+                        ; constraintName = MEMBER_STATUS_CODE
+                        ; diffType = ADD
+                    }
+                }
+            }
+            ; tweet = map:{
+                ; tableName = tweet
+                ; diffType = CHANGE
+                ; columnDiff = map:{
+                    ; MEMBER_ID = map:{
+                        ; columnName = MEMBER_ID
+                        ; diffType = ADD
+                    }
+                    ; TWEET_MESSAGE = map:{
+                        ; columnName = TWEET_MESSAGE
+                        ; diffType = CHANGE
+                        ; notNullDiff = map:{
+                            ; next = true
+                            ; previous = false
+                        }
+                    }
+                    ; MEMNER_ID = map:{
+                        ; columnName = MEMNER_ID
+                        ; diffType = DELETE
+                    }
+                }
+                ; foreignKeyDiff = map:{
+                    ; tweet_ibfk_1(new) = map:{
+                        ; constraintName = tweet_ibfk_1(new)
+                        ; diffType = ADD
+                    }
+                    ; tweet_ibfk_1(old) = map:{
+                        ; constraintName = tweet_ibfk_1(old)
+                        ; diffType = DELETE
+                    }
+                }
+                ; indexDiff = map:{
+                    ; MEMBER_ID = map:{
+                        ; constraintName = MEMBER_ID
+                        ; diffType = ADD
+                    }
+                    ; MEMNER_ID = map:{
+                        ; constraintName = MEMNER_ID
+                        ; diffType = DELETE
+                    }
+                }
+            }
+        }
+    }
+}

@@ -18,7 +18,7 @@ import jp.bizreach.twitter.dbflute.exentity.*;
  *     TWEET_ID
  * 
  * [column]
- *     TWEET_ID, MEMNER_ID, TWEET_MESSAGE, TWEET_DATETIE
+ *     TWEET_ID, MEMBER_ID, TWEET_MESSAGE, TWEET_DATETIE
  * 
  * [sequence]
  *     
@@ -44,11 +44,11 @@ import jp.bizreach.twitter.dbflute.exentity.*;
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
  * Long tweetId = entity.getTweetId();
- * Integer memnerId = entity.getMemnerId();
+ * Integer memberId = entity.getMemberId();
  * String tweetMessage = entity.getTweetMessage();
  * java.sql.Timestamp tweetDatetie = entity.getTweetDatetie();
  * entity.setTweetId(tweetId);
- * entity.setMemnerId(memnerId);
+ * entity.setMemberId(memberId);
  * entity.setTweetMessage(tweetMessage);
  * entity.setTweetDatetie(tweetDatetie);
  * = = = = = = = = = =/
@@ -72,10 +72,10 @@ public abstract class BsTweet implements Entity, Serializable, Cloneable {
     /** TWEET_ID: {PK, ID, NotNull, BIGINT(19)} */
     protected Long _tweetId;
 
-    /** MEMNER_ID: {IX, INT(10), FK to member} */
-    protected Integer _memnerId;
+    /** MEMBER_ID: {IX, NotNull, INT(10), FK to member} */
+    protected Integer _memberId;
 
-    /** TWEET_MESSAGE: {VARCHAR(140)} */
+    /** TWEET_MESSAGE: {NotNull, VARCHAR(140)} */
     protected String _tweetMessage;
 
     /** TWEET_DATETIE: {IX, NotNull, DATETIME(19)} */
@@ -145,11 +145,11 @@ public abstract class BsTweet implements Entity, Serializable, Cloneable {
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** member by my MEMNER_ID, named 'member'. */
+    /** member by my MEMBER_ID, named 'member'. */
     protected Member _member;
 
     /**
-     * member by my MEMNER_ID, named 'member'.
+     * member by my MEMBER_ID, named 'member'.
      * @return The entity of foreign property 'member'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
     public Member getMember() {
@@ -157,7 +157,7 @@ public abstract class BsTweet implements Entity, Serializable, Cloneable {
     }
 
     /**
-     * member by my MEMNER_ID, named 'member'.
+     * member by my MEMBER_ID, named 'member'.
      * @param member The entity of foreign property 'member'. (NullAllowed)
      */
     public void setMember(Member member) {
@@ -294,7 +294,7 @@ public abstract class BsTweet implements Entity, Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         String dm = ", ";
         sb.append(dm).append(getTweetId());
-        sb.append(dm).append(getMemnerId());
+        sb.append(dm).append(getMemberId());
         sb.append(dm).append(getTweetMessage());
         sb.append(dm).append(getTweetDatetie());
         if (sb.length() > dm.length()) {
@@ -348,37 +348,37 @@ public abstract class BsTweet implements Entity, Serializable, Cloneable {
     }
 
     /**
-     * [get] MEMNER_ID: {IX, INT(10), FK to member} <br />
+     * [get] MEMBER_ID: {IX, NotNull, INT(10), FK to member} <br />
      * 会員ID
-     * @return The value of the column 'MEMNER_ID'. (NullAllowed even if selected: for no constraint)
+     * @return The value of the column 'MEMBER_ID'. (basically NotNull if selected: for the constraint)
      */
-    public Integer getMemnerId() {
-        return _memnerId;
+    public Integer getMemberId() {
+        return _memberId;
     }
 
     /**
-     * [set] MEMNER_ID: {IX, INT(10), FK to member} <br />
+     * [set] MEMBER_ID: {IX, NotNull, INT(10), FK to member} <br />
      * 会員ID
-     * @param memnerId The value of the column 'MEMNER_ID'. (NullAllowed: null update allowed for no constraint)
+     * @param memberId The value of the column 'MEMBER_ID'. (basically NotNull if update: for the constraint)
      */
-    public void setMemnerId(Integer memnerId) {
-        __modifiedProperties.addPropertyName("memnerId");
-        this._memnerId = memnerId;
+    public void setMemberId(Integer memberId) {
+        __modifiedProperties.addPropertyName("memberId");
+        this._memberId = memberId;
     }
 
     /**
-     * [get] TWEET_MESSAGE: {VARCHAR(140)} <br />
+     * [get] TWEET_MESSAGE: {NotNull, VARCHAR(140)} <br />
      * ツイート内容
-     * @return The value of the column 'TWEET_MESSAGE'. (NullAllowed even if selected: for no constraint)
+     * @return The value of the column 'TWEET_MESSAGE'. (basically NotNull if selected: for the constraint)
      */
     public String getTweetMessage() {
         return convertEmptyToNull(_tweetMessage);
     }
 
     /**
-     * [set] TWEET_MESSAGE: {VARCHAR(140)} <br />
+     * [set] TWEET_MESSAGE: {NotNull, VARCHAR(140)} <br />
      * ツイート内容
-     * @param tweetMessage The value of the column 'TWEET_MESSAGE'. (NullAllowed: null update allowed for no constraint)
+     * @param tweetMessage The value of the column 'TWEET_MESSAGE'. (basically NotNull if update: for the constraint)
      */
     public void setTweetMessage(String tweetMessage) {
         __modifiedProperties.addPropertyName("tweetMessage");

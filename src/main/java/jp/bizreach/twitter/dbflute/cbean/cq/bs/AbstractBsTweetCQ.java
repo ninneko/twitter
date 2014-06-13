@@ -163,153 +163,141 @@ public abstract class AbstractBsTweetCQ extends AbstractConditionQuery {
     
     /**
      * Equal(=). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
-     * @param memnerId The value of memnerId as equal. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
+     * @param memberId The value of memberId as equal. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_Equal(Integer memnerId) {
-        doSetMemnerId_Equal(memnerId);
+    public void setMemberId_Equal(Integer memberId) {
+        doSetMemberId_Equal(memberId);
     }
 
-    protected void doSetMemnerId_Equal(Integer memnerId) {
-        regMemnerId(CK_EQ, memnerId);
+    protected void doSetMemberId_Equal(Integer memberId) {
+        regMemberId(CK_EQ, memberId);
     }
 
     /**
      * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
-     * @param memnerId The value of memnerId as notEqual. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
+     * @param memberId The value of memberId as notEqual. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_NotEqual(Integer memnerId) {
-        doSetMemnerId_NotEqual(memnerId);
+    public void setMemberId_NotEqual(Integer memberId) {
+        doSetMemberId_NotEqual(memberId);
     }
 
-    protected void doSetMemnerId_NotEqual(Integer memnerId) {
-        regMemnerId(CK_NES, memnerId);
+    protected void doSetMemberId_NotEqual(Integer memberId) {
+        regMemberId(CK_NES, memberId);
     }
 
     /**
      * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
-     * @param memnerId The value of memnerId as greaterThan. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
+     * @param memberId The value of memberId as greaterThan. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_GreaterThan(Integer memnerId) {
-        regMemnerId(CK_GT, memnerId);
+    public void setMemberId_GreaterThan(Integer memberId) {
+        regMemberId(CK_GT, memberId);
     }
 
     /**
      * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
-     * @param memnerId The value of memnerId as lessThan. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
+     * @param memberId The value of memberId as lessThan. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_LessThan(Integer memnerId) {
-        regMemnerId(CK_LT, memnerId);
+    public void setMemberId_LessThan(Integer memberId) {
+        regMemberId(CK_LT, memberId);
     }
 
     /**
      * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
-     * @param memnerId The value of memnerId as greaterEqual. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
+     * @param memberId The value of memberId as greaterEqual. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_GreaterEqual(Integer memnerId) {
-        regMemnerId(CK_GE, memnerId);
+    public void setMemberId_GreaterEqual(Integer memberId) {
+        regMemberId(CK_GE, memberId);
     }
 
     /**
      * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
-     * @param memnerId The value of memnerId as lessEqual. (NullAllowed: if null, no condition)
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
+     * @param memberId The value of memberId as lessEqual. (NullAllowed: if null, no condition)
      */
-    public void setMemnerId_LessEqual(Integer memnerId) {
-        regMemnerId(CK_LE, memnerId);
+    public void setMemberId_LessEqual(Integer memberId) {
+        regMemberId(CK_LE, memberId);
     }
 
     /**
      * RangeOf with various options. (versatile) <br />
      * {(default) minNumber &lt;= column &lt;= maxNumber} <br />
      * And NullIgnored, OnlyOnceRegistered. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
-     * @param minNumber The min number of memnerId. (NullAllowed: if null, no from-condition)
-     * @param maxNumber The max number of memnerId. (NullAllowed: if null, no to-condition)
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
+     * @param minNumber The min number of memberId. (NullAllowed: if null, no from-condition)
+     * @param maxNumber The max number of memberId. (NullAllowed: if null, no to-condition)
      * @param rangeOfOption The option of range-of. (NotNull)
      */
-    public void setMemnerId_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
-        regROO(minNumber, maxNumber, getCValueMemnerId(), "MEMNER_ID", rangeOfOption);
+    public void setMemberId_RangeOf(Integer minNumber, Integer maxNumber, RangeOfOption rangeOfOption) {
+        regROO(minNumber, maxNumber, getCValueMemberId(), "MEMBER_ID", rangeOfOption);
     }
 
     /**
      * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
-     * @param memnerIdList The collection of memnerId as inScope. (NullAllowed: if null (or empty), no condition)
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
+     * @param memberIdList The collection of memberId as inScope. (NullAllowed: if null (or empty), no condition)
      */
-    public void setMemnerId_InScope(Collection<Integer> memnerIdList) {
-        doSetMemnerId_InScope(memnerIdList);
+    public void setMemberId_InScope(Collection<Integer> memberIdList) {
+        doSetMemberId_InScope(memberIdList);
     }
 
-    protected void doSetMemnerId_InScope(Collection<Integer> memnerIdList) {
-        regINS(CK_INS, cTL(memnerIdList), getCValueMemnerId(), "MEMNER_ID");
+    protected void doSetMemberId_InScope(Collection<Integer> memberIdList) {
+        regINS(CK_INS, cTL(memberIdList), getCValueMemberId(), "MEMBER_ID");
     }
 
     /**
      * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
-     * @param memnerIdList The collection of memnerId as notInScope. (NullAllowed: if null (or empty), no condition)
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
+     * @param memberIdList The collection of memberId as notInScope. (NullAllowed: if null (or empty), no condition)
      */
-    public void setMemnerId_NotInScope(Collection<Integer> memnerIdList) {
-        doSetMemnerId_NotInScope(memnerIdList);
+    public void setMemberId_NotInScope(Collection<Integer> memberIdList) {
+        doSetMemberId_NotInScope(memberIdList);
     }
 
-    protected void doSetMemnerId_NotInScope(Collection<Integer> memnerIdList) {
-        regINS(CK_NINS, cTL(memnerIdList), getCValueMemnerId(), "MEMNER_ID");
+    protected void doSetMemberId_NotInScope(Collection<Integer> memberIdList) {
+        regINS(CK_NINS, cTL(memberIdList), getCValueMemberId(), "MEMBER_ID");
     }
 
     /**
      * Set up InScopeRelation (sub-query). <br />
-     * {in (select MEMNER_ID from member where ...)} <br />
-     * member by my MEMNER_ID, named 'member'.
+     * {in (select MEMBER_ID from member where ...)} <br />
+     * member by my MEMBER_ID, named 'member'.
      * @param subQuery The sub-query of Member for 'in-scope'. (NotNull)
      */
     public void inScopeMember(SubQuery<MemberCB> subQuery) {
         assertObjectNotNull("subQuery", subQuery);
         MemberCB cb = new MemberCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_InScopeRelation_Member(cb.query());
-        registerInScopeRelation(cb.query(), "MEMNER_ID", "MEMNER_ID", pp, "member");
+        String pp = keepMemberId_InScopeRelation_Member(cb.query());
+        registerInScopeRelation(cb.query(), "MEMBER_ID", "MEMBER_ID", pp, "member");
     }
-    public abstract String keepMemnerId_InScopeRelation_Member(MemberCQ sq);
+    public abstract String keepMemberId_InScopeRelation_Member(MemberCQ sq);
 
     /**
      * Set up NotInScopeRelation (sub-query). <br />
-     * {not in (select MEMNER_ID from member where ...)} <br />
-     * member by my MEMNER_ID, named 'member'.
+     * {not in (select MEMBER_ID from member where ...)} <br />
+     * member by my MEMBER_ID, named 'member'.
      * @param subQuery The sub-query of Member for 'not in-scope'. (NotNull)
      */
     public void notInScopeMember(SubQuery<MemberCB> subQuery) {
         assertObjectNotNull("subQuery", subQuery);
         MemberCB cb = new MemberCB(); cb.xsetupForInScopeRelation(this);
         try { lock(); subQuery.query(cb); } finally { unlock(); }
-        String pp = keepMemnerId_NotInScopeRelation_Member(cb.query());
-        registerNotInScopeRelation(cb.query(), "MEMNER_ID", "MEMNER_ID", pp, "member");
+        String pp = keepMemberId_NotInScopeRelation_Member(cb.query());
+        registerNotInScopeRelation(cb.query(), "MEMBER_ID", "MEMBER_ID", pp, "member");
     }
-    public abstract String keepMemnerId_NotInScopeRelation_Member(MemberCQ sq);
+    public abstract String keepMemberId_NotInScopeRelation_Member(MemberCQ sq);
 
-    /**
-     * IsNull {is null}. And OnlyOnceRegistered. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
-     */
-    public void setMemnerId_IsNull() { regMemnerId(CK_ISN, DOBJ); }
-
-    /**
-     * IsNotNull {is not null}. And OnlyOnceRegistered. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
-     */
-    public void setMemnerId_IsNotNull() { regMemnerId(CK_ISNN, DOBJ); }
-
-    protected void regMemnerId(ConditionKey ky, Object vl) { regQ(ky, vl, getCValueMemnerId(), "MEMNER_ID"); }
-    protected abstract ConditionValue getCValueMemnerId();
+    protected void regMemberId(ConditionKey ky, Object vl) { regQ(ky, vl, getCValueMemberId(), "MEMBER_ID"); }
+    protected abstract ConditionValue getCValueMemberId();
 
     /**
      * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @param tweetMessage The value of tweetMessage as equal. (NullAllowed: if null (or empty), no condition)
      */
     public void setTweetMessage_Equal(String tweetMessage) {
@@ -322,7 +310,7 @@ public abstract class AbstractBsTweetCQ extends AbstractConditionQuery {
 
     /**
      * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @param tweetMessage The value of tweetMessage as notEqual. (NullAllowed: if null (or empty), no condition)
      */
     public void setTweetMessage_NotEqual(String tweetMessage) {
@@ -335,7 +323,7 @@ public abstract class AbstractBsTweetCQ extends AbstractConditionQuery {
 
     /**
      * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @param tweetMessage The value of tweetMessage as greaterThan. (NullAllowed: if null (or empty), no condition)
      */
     public void setTweetMessage_GreaterThan(String tweetMessage) {
@@ -344,7 +332,7 @@ public abstract class AbstractBsTweetCQ extends AbstractConditionQuery {
 
     /**
      * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @param tweetMessage The value of tweetMessage as lessThan. (NullAllowed: if null (or empty), no condition)
      */
     public void setTweetMessage_LessThan(String tweetMessage) {
@@ -353,7 +341,7 @@ public abstract class AbstractBsTweetCQ extends AbstractConditionQuery {
 
     /**
      * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @param tweetMessage The value of tweetMessage as greaterEqual. (NullAllowed: if null (or empty), no condition)
      */
     public void setTweetMessage_GreaterEqual(String tweetMessage) {
@@ -362,7 +350,7 @@ public abstract class AbstractBsTweetCQ extends AbstractConditionQuery {
 
     /**
      * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @param tweetMessage The value of tweetMessage as lessEqual. (NullAllowed: if null (or empty), no condition)
      */
     public void setTweetMessage_LessEqual(String tweetMessage) {
@@ -371,7 +359,7 @@ public abstract class AbstractBsTweetCQ extends AbstractConditionQuery {
 
     /**
      * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @param tweetMessageList The collection of tweetMessage as inScope. (NullAllowed: if null (or empty), no condition)
      */
     public void setTweetMessage_InScope(Collection<String> tweetMessageList) {
@@ -384,7 +372,7 @@ public abstract class AbstractBsTweetCQ extends AbstractConditionQuery {
 
     /**
      * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @param tweetMessageList The collection of tweetMessage as notInScope. (NullAllowed: if null (or empty), no condition)
      */
     public void setTweetMessage_NotInScope(Collection<String> tweetMessageList) {
@@ -397,7 +385,7 @@ public abstract class AbstractBsTweetCQ extends AbstractConditionQuery {
 
     /**
      * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @param tweetMessage The value of tweetMessage as prefixSearch. (NullAllowed: if null (or empty), no condition)
      */
     public void setTweetMessage_PrefixSearch(String tweetMessage) {
@@ -406,7 +394,7 @@ public abstract class AbstractBsTweetCQ extends AbstractConditionQuery {
 
     /**
      * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)} <br />
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)} <br />
      * <pre>e.g. setTweetMessage_LikeSearch("xxx", new <span style="color: #DD4747">LikeSearchOption</span>().likeContain());</pre>
      * @param tweetMessage The value of tweetMessage as likeSearch. (NullAllowed: if null (or empty), no condition)
      * @param likeSearchOption The option of like-search. (NotNull)
@@ -418,31 +406,13 @@ public abstract class AbstractBsTweetCQ extends AbstractConditionQuery {
     /**
      * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br />
      * And NullOrEmptyIgnored, SeveralRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @param tweetMessage The value of tweetMessage as notLikeSearch. (NullAllowed: if null (or empty), no condition)
      * @param likeSearchOption The option of not-like-search. (NotNull)
      */
     public void setTweetMessage_NotLikeSearch(String tweetMessage, LikeSearchOption likeSearchOption) {
         regLSQ(CK_NLS, fRES(tweetMessage), getCValueTweetMessage(), "TWEET_MESSAGE", likeSearchOption);
     }
-
-    /**
-     * IsNull {is null}. And OnlyOnceRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
-     */
-    public void setTweetMessage_IsNull() { regTweetMessage(CK_ISN, DOBJ); }
-
-    /**
-     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
-     */
-    public void setTweetMessage_IsNullOrEmpty() { regTweetMessage(CK_ISNOE, DOBJ); }
-
-    /**
-     * IsNotNull {is not null}. And OnlyOnceRegistered. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
-     */
-    public void setTweetMessage_IsNotNull() { regTweetMessage(CK_ISNN, DOBJ); }
 
     protected void regTweetMessage(ConditionKey ky, Object vl) { regQ(ky, vl, getCValueTweetMessage(), "TWEET_MESSAGE"); }
     protected abstract ConditionValue getCValueTweetMessage();

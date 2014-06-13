@@ -20,6 +20,7 @@ import jp.bizreach.twitter.dbflute.allcommon.ImplementedInvokerAssistant;
 import jp.bizreach.twitter.dbflute.allcommon.ImplementedSqlClauseCreator;
 import jp.bizreach.twitter.dbflute.cbean.*;
 import jp.bizreach.twitter.dbflute.cbean.cq.*;
+import jp.bizreach.twitter.dbflute.cbean.nss.*;
 
 /**
  * The base condition-bean of member.
@@ -79,12 +80,12 @@ public class BsMemberCB extends AbstractConditionBean {
     //                                                                 ===================
     /**
      * Accept the query condition of primary key as equal.
-     * @param memnerId : PK, ID, NotNull, INT(10). (NotNull)
+     * @param memberId : PK, ID, NotNull, INT(10). (NotNull)
      */
-    public void acceptPrimaryKey(Integer memnerId) {
-        assertObjectNotNull("memnerId", memnerId);
+    public void acceptPrimaryKey(Integer memberId) {
+        assertObjectNotNull("memberId", memberId);
         BsMemberCB cb = this;
-        cb.query().setMemnerId_Equal(memnerId);;
+        cb.query().setMemberId_Equal(memberId);;
     }
 
     /**
@@ -98,12 +99,12 @@ public class BsMemberCB extends AbstractConditionBean {
     }
 
     public ConditionBean addOrderBy_PK_Asc() {
-        query().addOrderBy_MemnerId_Asc();
+        query().addOrderBy_MemberId_Asc();
         return this;
     }
 
     public ConditionBean addOrderBy_PK_Desc() {
-        query().addOrderBy_MemnerId_Desc();
+        query().addOrderBy_MemberId_Desc();
         return this;
     }
 
@@ -258,6 +259,49 @@ public class BsMemberCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
+    /**
+     * Set up relation columns to select clause. <br />
+     * member_status by my MEMBER_STATUS_CODE, named 'memberStatus'.
+     * <pre>
+     * MemberCB cb = new MemberCB();
+     * cb.<span style="color: #DD4747">setupSelect_MemberStatus()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     * cb.query().setFoo...(value);
+     * Member member = memberBhv.selectEntityWithDeletedCheck(cb);
+     * ... = member.<span style="color: #DD4747">getMemberStatus()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * </pre>
+     */
+    public void setupSelect_MemberStatus() {
+        assertSetupSelectPurpose("memberStatus");
+        if (hasSpecifiedColumn()) { // if reverse call
+            specify().columnMemberStatusCode();
+        }
+        doSetupSelect(new SsCall() { public ConditionQuery qf() { return query().queryMemberStatus(); } });
+    }
+
+    protected MemberSecurityNss _nssMemberSecurityAsOne;
+    public MemberSecurityNss getNssMemberSecurityAsOne() {
+        if (_nssMemberSecurityAsOne == null) { _nssMemberSecurityAsOne = new MemberSecurityNss(null); }
+        return _nssMemberSecurityAsOne;
+    }
+    /**
+     * Set up relation columns to select clause. <br />
+     * member_security by MEMBER_ID, named 'memberSecurityAsOne'.
+     * <pre>
+     * MemberCB cb = new MemberCB();
+     * cb.<span style="color: #DD4747">setupSelect_MemberSecurityAsOne()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     * cb.query().setFoo...(value);
+     * Member member = memberBhv.selectEntityWithDeletedCheck(cb);
+     * ... = member.<span style="color: #DD4747">getMemberSecurityAsOne()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MemberSecurityNss setupSelect_MemberSecurityAsOne() {
+        assertSetupSelectPurpose("memberSecurityAsOne");
+        doSetupSelect(new SsCall() { public ConditionQuery qf() { return query().queryMemberSecurityAsOne(); } });
+        if (_nssMemberSecurityAsOne == null || !_nssMemberSecurityAsOne.hasConditionQuery()) { _nssMemberSecurityAsOne = new MemberSecurityNss(query().queryMemberSecurityAsOne()); }
+        return _nssMemberSecurityAsOne;
+    }
+
     // [DBFlute-0.7.4]
     // ===================================================================================
     //                                                                             Specify
@@ -300,14 +344,16 @@ public class BsMemberCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MemberCQ> {
+        protected MemberStatusCB.HpSpecification _memberStatus;
+        protected MemberSecurityCB.HpSpecification _memberSecurityAsOne;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<MemberCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider)
         { super(baseCB, qyCall, purpose, dbmetaProvider); }
         /**
-         * MEMNER_ID: {PK, ID, NotNull, INT(10)}
+         * MEMBER_ID: {PK, ID, NotNull, INT(10)}
          * @return The information object of specified column. (NotNull)
          */
-        public HpSpecifiedColumn columnMemnerId() { return doColumn("MEMNER_ID"); }
+        public HpSpecifiedColumn columnMemberId() { return doColumn("MEMBER_ID"); }
         /**
          * MEMBER_NAME: {IX, NotNull, VARCHAR(50)}
          * @return The information object of specified column. (NotNull)
@@ -319,23 +365,64 @@ public class BsMemberCB extends AbstractConditionBean {
          */
         public HpSpecifiedColumn columnMemberAccount() { return doColumn("MEMBER_ACCOUNT"); }
         /**
-         * MEMBER_STATUS_CODE: {NotNull, CHAR(3)}
+         * MEMBER_STATUS_CODE: {IX, NotNull, CHAR(3), FK to member_status}
          * @return The information object of specified column. (NotNull)
          */
         public HpSpecifiedColumn columnMemberStatusCode() { return doColumn("MEMBER_STATUS_CODE"); }
-        /**
-         * MEMBER_PASSWORD: {NotNull, VARCHAR(50)}
-         * @return The information object of specified column. (NotNull)
-         */
-        public HpSpecifiedColumn columnMemberPassword() { return doColumn("MEMBER_PASSWORD"); }
         public void everyColumn() { doEveryColumn(); }
         public void exceptRecordMetaColumn() { doExceptRecordMetaColumn(); }
         @Override
         protected void doSpecifyRequiredColumn() {
-            columnMemnerId(); // PK
+            columnMemberId(); // PK
+            if (qyCall().qy().hasConditionQueryMemberStatus()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MemberStatusCQ) {
+                columnMemberStatusCode(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "member"; }
+        /**
+         * Prepare to specify functions about relation table. <br />
+         * member_status by my MEMBER_STATUS_CODE, named 'memberStatus'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MemberStatusCB.HpSpecification specifyMemberStatus() {
+            assertRelation("memberStatus");
+            if (_memberStatus == null) {
+                _memberStatus = new MemberStatusCB.HpSpecification(_baseCB, new HpSpQyCall<MemberStatusCQ>() {
+                    public boolean has() { return _qyCall.has() && _qyCall.qy().hasConditionQueryMemberStatus(); }
+                    public MemberStatusCQ qy() { return _qyCall.qy().queryMemberStatus(); } }
+                    , _purpose, _dbmetaProvider);
+                if (xhasSyncQyCall()) { // inherits it
+                    _memberStatus.xsetSyncQyCall(new HpSpQyCall<MemberStatusCQ>() {
+                        public boolean has() { return xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMemberStatus(); }
+                        public MemberStatusCQ qy() { return xsyncQyCall().qy().queryMemberStatus(); }
+                    });
+                }
+            }
+            return _memberStatus;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br />
+         * member_security by MEMBER_ID, named 'memberSecurityAsOne'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MemberSecurityCB.HpSpecification specifyMemberSecurityAsOne() {
+            assertRelation("memberSecurityAsOne");
+            if (_memberSecurityAsOne == null) {
+                _memberSecurityAsOne = new MemberSecurityCB.HpSpecification(_baseCB, new HpSpQyCall<MemberSecurityCQ>() {
+                    public boolean has() { return _qyCall.has() && _qyCall.qy().hasConditionQueryMemberSecurityAsOne(); }
+                    public MemberSecurityCQ qy() { return _qyCall.qy().queryMemberSecurityAsOne(); } }
+                    , _purpose, _dbmetaProvider);
+                if (xhasSyncQyCall()) { // inherits it
+                    _memberSecurityAsOne.xsetSyncQyCall(new HpSpQyCall<MemberSecurityCQ>() {
+                        public boolean has() { return xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMemberSecurityAsOne(); }
+                        public MemberSecurityCQ qy() { return xsyncQyCall().qy().queryMemberSecurityAsOne(); }
+                    });
+                }
+            }
+            return _memberSecurityAsOne;
+        }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br />
          * {select max(FOO) from member_following where ...) as FOO_MAX} <br />
@@ -379,7 +466,7 @@ public class BsMemberCB extends AbstractConditionBean {
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br />
          * {select max(FOO) from tweet where ...) as FOO_MAX} <br />
-         * tweet by MEMNER_ID, named 'tweetList'.
+         * tweet by MEMBER_ID, named 'tweetList'.
          * <pre>
          * cb.specify().<span style="color: #DD4747">derivedTweetList()</span>.<span style="color: #DD4747">max</span>(new SubQuery&lt;TweetCB&gt;() {
          *     public void query(TweetCB subCB) {

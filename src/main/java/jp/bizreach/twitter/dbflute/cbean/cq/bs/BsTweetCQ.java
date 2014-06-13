@@ -94,42 +94,42 @@ public class BsTweetCQ extends AbstractBsTweetCQ {
      */
     public BsTweetCQ addOrderBy_TweetId_Desc() { regOBD("TWEET_ID"); return this; }
 
-    protected ConditionValue _memnerId;
-    public ConditionValue getMemnerId() {
-        if (_memnerId == null) { _memnerId = nCV(); }
-        return _memnerId;
+    protected ConditionValue _memberId;
+    public ConditionValue getMemberId() {
+        if (_memberId == null) { _memberId = nCV(); }
+        return _memberId;
     }
-    protected ConditionValue getCValueMemnerId() { return getMemnerId(); }
+    protected ConditionValue getCValueMemberId() { return getMemberId(); }
 
-    protected Map<String, MemberCQ> _memnerId_InScopeRelation_MemberMap;
-    public Map<String, MemberCQ> getMemnerId_InScopeRelation_Member() { return _memnerId_InScopeRelation_MemberMap; }
-    public String keepMemnerId_InScopeRelation_Member(MemberCQ sq) {
-        if (_memnerId_InScopeRelation_MemberMap == null) { _memnerId_InScopeRelation_MemberMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_InScopeRelation_MemberMap.size() + 1);
-        _memnerId_InScopeRelation_MemberMap.put(ky, sq); return "memnerId_InScopeRelation_Member." + ky;
+    protected Map<String, MemberCQ> _memberId_InScopeRelation_MemberMap;
+    public Map<String, MemberCQ> getMemberId_InScopeRelation_Member() { return _memberId_InScopeRelation_MemberMap; }
+    public String keepMemberId_InScopeRelation_Member(MemberCQ sq) {
+        if (_memberId_InScopeRelation_MemberMap == null) { _memberId_InScopeRelation_MemberMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_InScopeRelation_MemberMap.size() + 1);
+        _memberId_InScopeRelation_MemberMap.put(ky, sq); return "memberId_InScopeRelation_Member." + ky;
     }
 
-    protected Map<String, MemberCQ> _memnerId_NotInScopeRelation_MemberMap;
-    public Map<String, MemberCQ> getMemnerId_NotInScopeRelation_Member() { return _memnerId_NotInScopeRelation_MemberMap; }
-    public String keepMemnerId_NotInScopeRelation_Member(MemberCQ sq) {
-        if (_memnerId_NotInScopeRelation_MemberMap == null) { _memnerId_NotInScopeRelation_MemberMap = newLinkedHashMapSized(4); }
-        String ky = "subQueryMapKey" + (_memnerId_NotInScopeRelation_MemberMap.size() + 1);
-        _memnerId_NotInScopeRelation_MemberMap.put(ky, sq); return "memnerId_NotInScopeRelation_Member." + ky;
+    protected Map<String, MemberCQ> _memberId_NotInScopeRelation_MemberMap;
+    public Map<String, MemberCQ> getMemberId_NotInScopeRelation_Member() { return _memberId_NotInScopeRelation_MemberMap; }
+    public String keepMemberId_NotInScopeRelation_Member(MemberCQ sq) {
+        if (_memberId_NotInScopeRelation_MemberMap == null) { _memberId_NotInScopeRelation_MemberMap = newLinkedHashMapSized(4); }
+        String ky = "subQueryMapKey" + (_memberId_NotInScopeRelation_MemberMap.size() + 1);
+        _memberId_NotInScopeRelation_MemberMap.put(ky, sq); return "memberId_NotInScopeRelation_Member." + ky;
     }
 
     /** 
      * Add order-by as ascend. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
      * @return this. (NotNull)
      */
-    public BsTweetCQ addOrderBy_MemnerId_Asc() { regOBA("MEMNER_ID"); return this; }
+    public BsTweetCQ addOrderBy_MemberId_Asc() { regOBA("MEMBER_ID"); return this; }
 
     /**
      * Add order-by as descend. <br />
-     * MEMNER_ID: {IX, INT(10), FK to member}
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
      * @return this. (NotNull)
      */
-    public BsTweetCQ addOrderBy_MemnerId_Desc() { regOBD("MEMNER_ID"); return this; }
+    public BsTweetCQ addOrderBy_MemberId_Desc() { regOBD("MEMBER_ID"); return this; }
 
     protected ConditionValue _tweetMessage;
     public ConditionValue getTweetMessage() {
@@ -140,14 +140,14 @@ public class BsTweetCQ extends AbstractBsTweetCQ {
 
     /** 
      * Add order-by as ascend. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @return this. (NotNull)
      */
     public BsTweetCQ addOrderBy_TweetMessage_Asc() { regOBA("TWEET_MESSAGE"); return this; }
 
     /**
      * Add order-by as descend. <br />
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @return this. (NotNull)
      */
     public BsTweetCQ addOrderBy_TweetMessage_Desc() { regOBD("TWEET_MESSAGE"); return this; }
@@ -226,7 +226,7 @@ public class BsTweetCQ extends AbstractBsTweetCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br />
-     * member by my MEMNER_ID, named 'member'.
+     * member by my MEMBER_ID, named 'member'.
      * @return The instance of condition-query. (NotNull)
      */
     public MemberCQ queryMember() {
@@ -251,7 +251,7 @@ public class BsTweetCQ extends AbstractBsTweetCQ {
     protected void xsetupOuterJoinMember() {
         MemberCQ cq = getConditionQueryMember();
         Map<String, String> joinOnMap = newLinkedHashMapSized(4);
-        joinOnMap.put("MEMNER_ID", "MEMNER_ID");
+        joinOnMap.put("MEMBER_ID", "MEMBER_ID");
         registerOuterJoin(cq, joinOnMap, "member");
     }
     public boolean hasConditionQueryMember() {

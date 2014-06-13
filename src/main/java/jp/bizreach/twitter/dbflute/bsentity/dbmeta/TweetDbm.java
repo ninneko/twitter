@@ -39,7 +39,7 @@ public class TweetDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _epgMap = newHashMap();
     {
         setupEpg(_epgMap, new EpgTweetId(), "tweetId");
-        setupEpg(_epgMap, new EpgMemnerId(), "memnerId");
+        setupEpg(_epgMap, new EpgMemberId(), "memberId");
         setupEpg(_epgMap, new EpgTweetMessage(), "tweetMessage");
         setupEpg(_epgMap, new EpgTweetDatetie(), "tweetDatetie");
     }
@@ -47,9 +47,9 @@ public class TweetDbm extends AbstractDBMeta {
         public Object read(Entity et) { return ((Tweet)et).getTweetId(); }
         public void write(Entity et, Object vl) { ((Tweet)et).setTweetId(ctl(vl)); }
     }
-    public static class EpgMemnerId implements PropertyGateway {
-        public Object read(Entity et) { return ((Tweet)et).getMemnerId(); }
-        public void write(Entity et, Object vl) { ((Tweet)et).setMemnerId(cti(vl)); }
+    public static class EpgMemberId implements PropertyGateway {
+        public Object read(Entity et) { return ((Tweet)et).getMemberId(); }
+        public void write(Entity et, Object vl) { ((Tweet)et).setMemberId(cti(vl)); }
     }
     public static class EpgTweetMessage implements PropertyGateway {
         public Object read(Entity et) { return ((Tweet)et).getTweetMessage(); }
@@ -91,8 +91,8 @@ public class TweetDbm extends AbstractDBMeta {
     //                                                                         Column Info
     //                                                                         ===========
     protected final ColumnInfo _columnTweetId = cci("TWEET_ID", "TWEET_ID", null, null, Long.class, "tweetId", null, true, true, true, "BIGINT", 19, 0, null, false, null, null, null, null, null);
-    protected final ColumnInfo _columnMemnerId = cci("MEMNER_ID", "MEMNER_ID", null, null, Integer.class, "memnerId", null, false, false, false, "INT", 10, 0, null, false, null, null, "member", null, null);
-    protected final ColumnInfo _columnTweetMessage = cci("TWEET_MESSAGE", "TWEET_MESSAGE", null, null, String.class, "tweetMessage", null, false, false, false, "VARCHAR", 140, 0, null, false, null, null, null, null, null);
+    protected final ColumnInfo _columnMemberId = cci("MEMBER_ID", "MEMBER_ID", null, null, Integer.class, "memberId", null, false, false, true, "INT", 10, 0, null, false, null, null, "member", null, null);
+    protected final ColumnInfo _columnTweetMessage = cci("TWEET_MESSAGE", "TWEET_MESSAGE", null, null, String.class, "tweetMessage", null, false, false, true, "VARCHAR", 140, 0, null, false, null, null, null, null, null);
     protected final ColumnInfo _columnTweetDatetie = cci("TWEET_DATETIE", "TWEET_DATETIE", null, null, java.sql.Timestamp.class, "tweetDatetie", null, false, false, true, "DATETIME", 19, 0, null, false, null, null, null, null, null);
 
     /**
@@ -101,12 +101,12 @@ public class TweetDbm extends AbstractDBMeta {
      */
     public ColumnInfo columnTweetId() { return _columnTweetId; }
     /**
-     * MEMNER_ID: {IX, INT(10), FK to member}
+     * MEMBER_ID: {IX, NotNull, INT(10), FK to member}
      * @return The information object of specified column. (NotNull)
      */
-    public ColumnInfo columnMemnerId() { return _columnMemnerId; }
+    public ColumnInfo columnMemberId() { return _columnMemberId; }
     /**
-     * TWEET_MESSAGE: {VARCHAR(140)}
+     * TWEET_MESSAGE: {NotNull, VARCHAR(140)}
      * @return The information object of specified column. (NotNull)
      */
     public ColumnInfo columnTweetMessage() { return _columnTweetMessage; }
@@ -119,7 +119,7 @@ public class TweetDbm extends AbstractDBMeta {
     protected List<ColumnInfo> ccil() {
         List<ColumnInfo> ls = newArrayList();
         ls.add(columnTweetId());
-        ls.add(columnMemnerId());
+        ls.add(columnMemberId());
         ls.add(columnTweetMessage());
         ls.add(columnTweetDatetie());
         return ls;
@@ -146,11 +146,11 @@ public class TweetDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * member by my MEMNER_ID, named 'member'.
+     * member by my MEMBER_ID, named 'member'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMember() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMemnerId(), MemberDbm.getInstance().columnMemnerId());
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMemberId(), MemberDbm.getInstance().columnMemberId());
         return cfi("tweet_ibfk_1", "member", this, MemberDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "tweetList");
     }
 

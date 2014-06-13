@@ -6,6 +6,9 @@
 	<include path="aop.dicon"/>
 	<include path="j2ee.dicon"/>
 	<include path="dbflute.dicon"/>
+	<!--
+	<component name="memberDto" class="jp.bizreach.twitter.common.MemberDto" instance="session" />
+	-->
 
 	<!-- include dbflute.dicon if you use DBFlute -->
 	<!-- <include path="dbflute.dicon"/> -->

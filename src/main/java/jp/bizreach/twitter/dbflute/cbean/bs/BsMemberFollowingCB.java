@@ -20,6 +20,7 @@ import jp.bizreach.twitter.dbflute.allcommon.ImplementedInvokerAssistant;
 import jp.bizreach.twitter.dbflute.allcommon.ImplementedSqlClauseCreator;
 import jp.bizreach.twitter.dbflute.cbean.*;
 import jp.bizreach.twitter.dbflute.cbean.cq.*;
+import jp.bizreach.twitter.dbflute.cbean.nss.*;
 
 /**
  * The base condition-bean of member_following.
@@ -259,6 +260,11 @@ public class BsMemberFollowingCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
+    protected MemberNss _nssMemberByMyMemberId;
+    public MemberNss getNssMemberByMyMemberId() {
+        if (_nssMemberByMyMemberId == null) { _nssMemberByMyMemberId = new MemberNss(null); }
+        return _nssMemberByMyMemberId;
+    }
     /**
      * Set up relation columns to select clause. <br />
      * member by my MY_MEMBER_ID, named 'memberByMyMemberId'.
@@ -269,15 +275,24 @@ public class BsMemberFollowingCB extends AbstractConditionBean {
      * MemberFollowing memberFollowing = memberFollowingBhv.selectEntityWithDeletedCheck(cb);
      * ... = memberFollowing.<span style="color: #DD4747">getMemberByMyMemberId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public void setupSelect_MemberByMyMemberId() {
+    public MemberNss setupSelect_MemberByMyMemberId() {
         assertSetupSelectPurpose("memberByMyMemberId");
         if (hasSpecifiedColumn()) { // if reverse call
             specify().columnMyMemberId();
         }
         doSetupSelect(new SsCall() { public ConditionQuery qf() { return query().queryMemberByMyMemberId(); } });
+        if (_nssMemberByMyMemberId == null || !_nssMemberByMyMemberId.hasConditionQuery())
+        { _nssMemberByMyMemberId = new MemberNss(query().queryMemberByMyMemberId()); }
+        return _nssMemberByMyMemberId;
     }
 
+    protected MemberNss _nssMemberByYourMemberId;
+    public MemberNss getNssMemberByYourMemberId() {
+        if (_nssMemberByYourMemberId == null) { _nssMemberByYourMemberId = new MemberNss(null); }
+        return _nssMemberByYourMemberId;
+    }
     /**
      * Set up relation columns to select clause. <br />
      * member by my YOUR_MEMBER_ID, named 'memberByYourMemberId'.
@@ -288,13 +303,17 @@ public class BsMemberFollowingCB extends AbstractConditionBean {
      * MemberFollowing memberFollowing = memberFollowingBhv.selectEntityWithDeletedCheck(cb);
      * ... = memberFollowing.<span style="color: #DD4747">getMemberByYourMemberId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public void setupSelect_MemberByYourMemberId() {
+    public MemberNss setupSelect_MemberByYourMemberId() {
         assertSetupSelectPurpose("memberByYourMemberId");
         if (hasSpecifiedColumn()) { // if reverse call
             specify().columnYourMemberId();
         }
         doSetupSelect(new SsCall() { public ConditionQuery qf() { return query().queryMemberByYourMemberId(); } });
+        if (_nssMemberByYourMemberId == null || !_nssMemberByYourMemberId.hasConditionQuery())
+        { _nssMemberByYourMemberId = new MemberNss(query().queryMemberByYourMemberId()); }
+        return _nssMemberByYourMemberId;
     }
 
     // [DBFlute-0.7.4]
