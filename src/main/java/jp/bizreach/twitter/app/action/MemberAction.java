@@ -44,5 +44,4 @@ public class MemberAction {
 
         return "index.jsp";
     }
-
 }

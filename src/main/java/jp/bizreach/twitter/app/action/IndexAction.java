@@ -15,6 +15,15 @@
  */
 package jp.bizreach.twitter.app.action;
 
+import java.util.List;
+
+import jp.bizreach.twitter.dbflute.cbean.TweetCB;
+import jp.bizreach.twitter.dbflute.exbhv.MemberBhv;
+import jp.bizreach.twitter.dbflute.exbhv.TweetBhv;
+import jp.bizreach.twitter.dbflute.exentity.Member;
+import jp.bizreach.twitter.dbflute.exentity.Tweet;
+import jp.bizreach.twitter.domainfw.PagingNavi;
+
 import org.seasar.struts.annotation.Execute;
 
 /**
@@ -22,9 +31,31 @@ import org.seasar.struts.annotation.Execute;
  */
 public class IndexAction {
 
-    @Execute(validator = false)
+    public String name;
+    public TweetBhv tweetBhv;
+    public MemberBhv memberBhv;
+    public List<Tweet> tweetList;
+    public List<Member> memberList;
+    public PagingNavi pagingNavi;
+
+    @Execute(validator = false, urlPattern = "{name}")
     public String index() {
-        return "index.jsp";
+        if (name == null) {
+            name = "nullpo";
+            return "index.jsp";
+        }
+
+        TweetCB cb = new TweetCB();
+        cb.setupSelect_Member();
+        cb.query().queryMember().setMemberAccount_Equal(name);
+        tweetList = tweetBhv.selectList(cb);
+
+        if (tweetList.size() > 0) {
+            return "member.jsp";
+        } else {
+            name = "hazure";
+            return "index.jsp";
+        }
     }
 
 }

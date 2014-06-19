@@ -2,7 +2,7 @@
 <html lang="ja">
 <body>
 
-<h2>Twitter Top</h2>
+<h2>Twitter Top ${name}</h2>
 
 </body>
 </html>

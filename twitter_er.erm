@@ -113,7 +113,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2014-06-09 17:28:03</creation_date>
-			<updated_date>2014-06-11 18:48:39</updated_date>
+			<updated_date>2014-06-18 17:09:04</updated_date>
 			<model_property>
 				<name>プロジェクト名</name>
 				<value></value>
@@ -340,8 +340,8 @@
 			<width>424</width>
 				<font_name>メイリオ</font_name>
 				<font_size>9</font_size>
-			<x>41</x>
-			<y>252</y>
+			<x>24</x>
+			<y>84</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -579,11 +579,11 @@
 		<table>
 			<id>1</id>
 			<height>181</height>
-			<width>332</width>
+			<width>411</width>
 				<font_name>メイリオ</font_name>
 				<font_size>9</font_size>
-			<x>41</x>
-			<y>16</y>
+			<x>312</x>
+			<y>468</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -781,12 +781,12 @@
 		</table>
 		<table>
 			<id>2</id>
-			<height>75</height>
-			<width>120</width>
+			<height>94</height>
+			<width>314</width>
 				<font_name>メイリオ</font_name>
 				<font_size>9</font_size>
-			<x>503</x>
-			<y>455</y>
+			<x>816</x>
+			<y>588</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -830,7 +830,7 @@
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
-					<physical_name>MEMBER_ID</physical_name>
+					<physical_name></physical_name>
 					<type>integer</type>
 					<constraint></constraint>
 					<default_value></default_value>
@@ -909,8 +909,8 @@
 			<width>363</width>
 				<font_name>メイリオ</font_name>
 				<font_size>9</font_size>
-			<x>561</x>
-			<y>228</y>
+			<x>912</x>
+			<y>252</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
@@ -1108,12 +1108,12 @@
 		</table>
 		<table>
 			<id>4</id>
-			<height>75</height>
-			<width>120</width>
+			<height>118</height>
+			<width>431</width>
 				<font_name>メイリオ</font_name>
 				<font_size>9</font_size>
-			<x>527</x>
-			<y>47</y>
+			<x>672</x>
+			<y>48</y>
 			<color>
 				<r>128</r>
 				<g>128</g>
