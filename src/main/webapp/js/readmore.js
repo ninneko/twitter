@@ -6,7 +6,7 @@ $(function(){
             $(data).each(
                 function(){
                     $('#contents')
-                    .append($('<tr></tr>').append("<td>"+this.memberAccount +"</td>").append("<td>"+this.memberName +"</td>"));
+                    .append($('<tr></tr>').append("<td>"+this.memberAccount +"</td>").append("<td>"+this.memberName +"</td>").append("<td>"+this.password +"</td>"));
                 })
         });
     $('#read-more').click(
@@ -18,7 +18,7 @@ $(function(){
                     $(data).each(
                         function(){
                            $('#contents')
-                           .append($('<tr></tr>').append("<td>"+this.memberAccount +"</td>").append("<td>"+this.memberName +"</td>"));
+                           .append($('<tr></tr>').append("<td>"+this.memberAccount +"</td>").append("<td>"+this.memberName +"</td>").append("<td>"+this.password +"</td>"));
                        })
                 })
         })

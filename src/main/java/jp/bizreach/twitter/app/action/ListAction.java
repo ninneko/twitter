@@ -7,6 +7,7 @@ import jp.bizreach.twitter.dbflute.cbean.MemberCB;
 import jp.bizreach.twitter.dbflute.exbhv.MemberBhv;
 import jp.bizreach.twitter.dbflute.exbhv.TweetBhv;
 import jp.bizreach.twitter.dbflute.exentity.Member;
+import jp.bizreach.twitter.dbflute.exentity.MemberSecurity;
 import jp.bizreach.twitter.domainfw.PagingNavi;
 import net.arnx.jsonic.JSON;
 
@@ -47,6 +48,7 @@ public class ListAction {
 
         pagingnum = num;
         MemberCB cb = new MemberCB();
+        cb.setupSelect_MemberSecurityAsOne();
         cb.paging(5, pagingnum);
 
         PagingResultBean<Member> page = memberBhv.selectPage(cb);
@@ -59,6 +61,8 @@ public class ListAction {
             bean.memberId = member.getMemberId();
             bean.memberName = member.getMemberName();
             bean.memberAccount = member.getMemberAccount();
+            MemberSecurity memberSecurityAsOne = member.getMemberSecurityAsOne();
+            bean.password = memberSecurityAsOne.getPassword();
             beanList.add(bean);
         }
 

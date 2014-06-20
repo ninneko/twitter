@@ -13,6 +13,7 @@
     <tr>
       <th>ID</th>
       <th>名前</th>
+      <th>パスワード</th>
     </tr>
   </thead>
 <tbody id="contents">

@@ -18,16 +18,17 @@ public class LoginAction {
     protected LoginForm loginForm;
 
     @Resource
-    protected MemberDto memberDto;
+    public MemberDto memberDto;
 
     @Resource
-    MemberBhv memberBhv;
+    public MemberBhv memberBhv;
 
     @Execute(validator = false)
     public String index() {
         return "loginForm.jsp";
     }
 
+    /* TODO こいつが思わぬ形で呼ばれると、フォームのプロパティがnullのため、全件検索を行って思わぬユーザーでログインしてしまう */
     @Execute(validator = true, input = "logionForm.jsp")
     public String login() {
         MemberCB cb = new MemberCB();
@@ -39,6 +40,8 @@ public class LoginAction {
 
         if (member != null) {
             memberDto.memberId = member.getMemberId();
+            memberDto.memberAccount = member.getMemberAccount();
+            memberDto.memberName = member.getMemberName();
             return "/mypage/?redirect=true";
         } else {
             return "/login/?redirect=true";

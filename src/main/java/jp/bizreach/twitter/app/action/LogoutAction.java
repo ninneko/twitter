@@ -24,6 +24,8 @@ public class LogoutAction {
     @Execute(validator = false)
     public String index() {
         memberDto.memberId = null;
+        memberDto.memberAccount = null;
+        memberDto.memberName = null;
 
         return "/?redirect=true";
     }

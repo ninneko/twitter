@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import jp.bizreach.twitter.app.dto.MemberDto;
 import jp.bizreach.twitter.app.form.SignupForm;
 import jp.bizreach.twitter.dbflute.exbhv.MemberBhv;
+import jp.bizreach.twitter.dbflute.exbhv.MemberSecurityBhv;
 import jp.bizreach.twitter.dbflute.exentity.Member;
 import jp.bizreach.twitter.dbflute.exentity.MemberSecurity;
 
@@ -16,6 +17,7 @@ public class SignupAction {
     @ActionForm
     public SignupForm signupForm;
     public MemberBhv memberBhv;
+    public MemberSecurityBhv memberSecurityBhv;
     @Resource
     protected MemberDto memberDto;
 
@@ -37,8 +39,11 @@ public class SignupAction {
         MemberSecurity security = new MemberSecurity();
         security.setMemberId(member.getMemberId());
         security.setPassword(signupForm.password);
+        memberSecurityBhv.insert(security);
 
         memberDto.memberId = member.getMemberId();
+        memberDto.memberAccount = member.getMemberAccount();
+        memberDto.memberName = member.getMemberName();
         return "/mypage/?redirect=true";
     }
 }

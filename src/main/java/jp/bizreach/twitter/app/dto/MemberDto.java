@@ -10,6 +10,8 @@ public class MemberDto implements Serializable {
 
     private static final long serialVersionUID = 1L;
     public Integer memberId = null;
+    public String memberName = null;
+    public String memberAccount = null;
 
     public boolean isLogin() {
         if (memberId == null) {
@@ -17,5 +19,10 @@ public class MemberDto implements Serializable {
         } else {
             return true;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "{" + memberId + "}";
     }
 }
